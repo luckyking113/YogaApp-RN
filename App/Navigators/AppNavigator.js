@@ -3,33 +3,74 @@ import {
   createAppContainer,
   createStackNavigator,
   createBottomTabNavigator,
-} from 'react-navigation'
+} from 'react-navigation';
 
-import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons';
 
-import ExampleScreen from 'App/Containers/Example/ExampleScreen'
-import SplashScreen from 'App/Containers/SplashScreen/SplashScreen'
-import HomeScreen from '../Containers/HomeScreen/HomeScreen'
-import ActScreen from '../Containers/ActScreen/ActScreen'
-import BusinessScreen from '../Containers/BusinessScreen/BusinessScreen'
-import StudyScreen from '../Containers/StudyScreen/StudyScreen'
-import ManageScreen from '../Containers/ManageScreen/ManageScreen'
-import Colors from '../Theme/Colors'
+import ExampleScreen from 'App/Containers/Example/ExampleScreen';
+import SplashScreen from 'App/Containers/SplashScreen/SplashScreen';
 
-import {STRINGS} from '../Config'
+import HomeScreen from '../Containers/HomeScreen/HomeScreen';
+import BookingScreen from '../Containers/BookingScreen/BookingScreen';
+import AssignedScreen from '../Containers/AssignedScreen/AssignedScreen';
+import MemberScreen from '../Containers/MemberScreen/MemberScreen';
+import VisitorScreen from '../Containers/VisitorScreen/VisitorScreen';
 
-import AgentMission from '../Containers/ManageScreen/Workbench/AgentMission'
-import PersonalEducation from '../Containers/ManageScreen/Workbench/PersonalEducation'
-import ScanCode from '../Containers/ManageScreen/Workbench/ScanCode'
-import YogaHeadline from '../Containers/ManageScreen/Workbench/YogaHeadline'
-import Configuration from '../Containers/ManageScreen/Workbench/Configuration'
-import ExperienceManagement from '../Containers/ManageScreen/Workbench/ExperienceManagement'
+import ActScreen from '../Containers/ActScreen/ActScreen';
+import BusinessScreen from '../Containers/BusinessScreen/BusinessScreen';
+import StudyScreen from '../Containers/StudyScreen/StudyScreen';
+import ManageScreen from '../Containers/ManageScreen/ManageScreen';
+import Colors from '../Theme/Colors';
+
+import {STRINGS} from '../Config';
+
+import AgentMission from '../Containers/ManageScreen/Workbench/AgentMission';
+import PersonalEducation from '../Containers/ManageScreen/Workbench/PersonalEducation';
+import ScanCode from '../Containers/ManageScreen/Workbench/ScanCode';
+import YogaHeadline from '../Containers/ManageScreen/Workbench/YogaHeadline';
+import Configuration from '../Containers/ManageScreen/Workbench/Configuration';
+import ExperienceManagement from '../Containers/ManageScreen/Workbench/ExperienceManagement';
 
 
 const TabNavigator = createBottomTabNavigator(
   {
     Home: {
-      screen: HomeScreen,
+      screen: createStackNavigator({
+        // screen:HomeScreen,
+        // navigationOptions: ({ navigation }) => ({
+        //   title: STRINGS.ExperienceManagement, // Title to appear in status bar
+        // }),
+        HomeScreen: {
+          screen: HomeScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Home Screen', // Title to appear in status bar
+          }),
+        },
+        BookingScreen:{
+          screen: BookingScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Booking Screen', // Title to appear in status bar
+          }),
+        },
+        AssignedScreen:{
+          screen: AssignedScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'Assigned Screen', // Title to appear in status bar
+          }),
+        },
+        MemberScreen:{
+          screen: MemberScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'MemberScreen Screen', // Title to appear in status bar
+          }),
+        },
+        VisitorScreen:{
+          screen: VisitorScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'VisitorScreen Screen', // Title to appear in status bar
+          }),
+        }
+      }),
       navigationOptions: {
         // tabBarIcon: ({ focused, tintColor }) => {
         //   const iconName = `ios-information-circle${focused ? '' : '-outline'}`
