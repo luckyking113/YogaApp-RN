@@ -4,6 +4,7 @@ import {
   createStackNavigator,
   createBottomTabNavigator,
 } from 'react-navigation';
+import { View, Text } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -15,6 +16,7 @@ import BookingScreen from '../Containers/BookingScreen/BookingScreen';
 import AssignedScreen from '../Containers/AssignedScreen/AssignedScreen';
 import MemberScreen from '../Containers/MemberScreen/MemberScreen';
 import VisitorScreen from '../Containers/VisitorScreen/VisitorScreen';
+import HomeHeaderComponent from '../Components/HomeHeader/HomeHeaderComponent';
 
 import ActScreen from '../Containers/ActScreen/ActScreen';
 import BusinessScreen from '../Containers/BusinessScreen/BusinessScreen';
@@ -43,7 +45,7 @@ const TabNavigator = createBottomTabNavigator(
         HomeScreen: {
           screen: HomeScreen,
           navigationOptions: ({ navigation }) => ({
-            title: 'Home Screen', // Title to appear in status bar
+            header: (<HomeHeaderComponent />),            
           }),
         },
         BookingScreen:{

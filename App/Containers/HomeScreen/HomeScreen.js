@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet,Text, View, ScrollView, Dimensions } from 'react-native';
+import { StyleSheet,Text, View, ScrollView, Dimensions, StatusBar } from 'react-native';
 import styles from './HomeScreenStyle';
 import { SliderBox } from 'react-native-image-slider-box';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -83,7 +83,8 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView>        
+        <StatusBar backgroundColor="#79ECB3" />
         <View style={styles.container}>                
           <View style={styles.homeSlideContainer}>
             <SliderBox

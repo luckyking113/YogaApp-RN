@@ -10,5 +10,12 @@ export default {
       flex: 1,
       backgroundColor:'#F8F8F8',
     },
+    headerContainer:{      
+      backgroundColor:'#79ECB3',
+      height: 50,
+      alignSelf:'center',
+      justifyContent:'center',
+      width:'100%',
+    }
   },
 }

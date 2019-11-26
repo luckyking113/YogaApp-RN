@@ -9,7 +9,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',        
   },
-
   homeSlideContainer: {
     flex:1,
   },
