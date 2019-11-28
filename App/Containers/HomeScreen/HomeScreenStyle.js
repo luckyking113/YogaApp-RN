@@ -31,5 +31,50 @@ export default StyleSheet.create({
   tabItemBtn:{    
     justifyContent: 'center',
     alignItems: 'center' 
-  }
+  },
+  operateContainer:{
+    flexDirection:'column',    
+  },
+  operateContent:{
+    height:50,
+    justifyContent: 'center',
+    alignItems: 'center',    
+    backgroundColor:'white',
+    marginTop:10,
+    paddingHorizontal:15,    
+    flexDirection:'row',
+    justifyContent:'space-between'
+  },
+  statisticalTxt:{
+    color:'#81F0B9',
+    marginRight:10,
+  },
+  operateBrefContent:{
+    paddingHorizontal:7,
+  },
+  operateBrefItems:{
+    width:'48%',
+    textAlign:'center',
+    alignItems:'center',
+  },
+
+  appointmentDetail:{
+    width:'100%'
+  },
+
+  appointmentDetailItems:{    
+    textAlign:'center',
+    alignItems:'center',
+  },
+
+  monthlySailContent:{
+    height:50,
+    justifyContent: 'center',
+    alignItems: 'center',    
+    backgroundColor:'white',
+    marginTop:10,
+    paddingHorizontal:15,    
+    flexDirection:'row',
+    justifyContent:'space-between'
+  },
 })

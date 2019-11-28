@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet,Text, View, ScrollView, Dimensions, StatusBar } from 'react-native';
+import { StyleSheet,Text, View, Image,ScrollView, Dimensions, StatusBar } from 'react-native';
 import styles from './HomeScreenStyle';
 import { SliderBox } from 'react-native-image-slider-box';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -7,6 +7,8 @@ import { SectionGrid } from 'react-native-super-grid';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Colors from '../../Theme/Colors';
 import {STRINGS} from '../../Config';
+
+// import { SuperGridSectionList } from 'react-native-super-grid';
 
 var screenHeight = Dimensions.get('window').height; 
 
@@ -21,6 +23,41 @@ function Item({ item: { title, bgColor, icon, color, onPressHandler } }) {
   )
 }
 
+function StatisticalItem({ item: {statisticalNumber, title, bgColor } }) {
+  return (    
+    <View style={{width:'100%', height:80, borderRadius:8, backgroundColor:'white',justifyContent: 'center', alignItems: 'center', borderLeftWidth: 6, borderLeftColor:bgColor }}>        
+      <Text style={{color:bgColor, fontSize:20}}>{statisticalNumber}</Text>      
+      <Text style={styles.title}>{title}</Text>      
+    </View>
+  )
+}
+
+function AppointmentItem({ item: {teacherName,country, oclick, detail,State, bgColor } }) {
+  return (    
+    <View style={{width:'100%',flexDirection:'row', paddingHorizontal:50,height:100, borderRadius:0,justifyContent: 'space-between', alignItems: 'center', borderLeftWidth: 6, borderLeftColor:bgColor }}>        
+      <View>
+        <View style={{flexDirection:'row'}}>
+          <Text style={{}}>{oclick}</Text>
+          <View style={{backgroundColor:'#F7C97D',marginLeft:15,alignItems:'center', justifyContent:'center',width:40}}>
+            <Text style={{}}>{country}</Text>   
+          </View>          
+        </View>        
+        <Text style={styles.title}>{detail}</Text> 
+        <Text style={styles.title}>{State}</Text>      
+      </View>
+      <View>
+        <View style={{justifyContent:'center',marginTop:-23, alignItems:'center',flexDirection:'row'}}>
+          <Text>{teacherName}</Text>
+          <Image
+            style={{width: 30, height: 30, marginLeft:10}}
+            source={require('../../Assets/Images/homeIcon.png')}
+          />
+        </View>
+      </View>      
+    </View>
+  )
+}
+
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -28,21 +65,8 @@ export default class HomeScreen extends React.Component {
       images: [
         'https://source.unsplash.com/1024x768/?nature',
         'https://source.unsplash.com/1024x768/?water',        
-      ]
+      ],      
     };
-  }
-
-  goBookingScreen = () => {
-    this.props.navigation.navigate('BookingScreen');
-  }
-  goAssignedScreen = () => {
-    this.props.navigation.navigate('AssignedScreen');
-  }
-  goMemberScreen = () => {
-    this.props.navigation.navigate('MemberScreen');
-  }
-  goVisitorScreen = () => {
-    this.props.navigation.navigate('VisitorScreen');
   }
 
   DATA = [
@@ -81,6 +105,125 @@ export default class HomeScreen extends React.Component {
     },
   ]
 
+  StatisticalItems = [
+    {
+      title: STRINGS.WorkBench, //'工作台',
+      data: [
+        {
+          title: STRINGS.CreditCard,           
+          statisticalNumber:0,
+          color: 'white',
+          bgColor:'#F79375',          
+        },
+        {
+          title: STRINGS.CashAmount,  
+          statisticalNumber:0,     
+          color: 'white',
+          bgColor:'#F7C97D',          
+        }, 
+        {
+          title: STRINGS.StoreCard,
+          statisticalNumber:0,
+          color: 'white',
+          bgColor:'#78EFB4',          
+        },
+        {
+          title: STRINGS.SolidAmount,
+          statisticalNumber:0,
+          color: 'white',
+          bgColor:'#78CBEF',          
+        },
+        {
+          title: STRINGS.NewMember, 
+          statisticalNumber:0,   
+          color: 'white',
+          bgColor:'#AA78EF',          
+        },
+        {
+          title: STRINGS.NewVisitor,
+          statisticalNumber:1,       
+          color: 'white',
+          bgColor:'#EF78BD',          
+        }, 
+        {
+          title: STRINGS.AddVisitorLectures, 
+          statisticalNumber:20,      
+          color: 'white',
+          bgColor:'#58EE56',          
+        },
+        {
+          title: STRINGS.PrivateAppointment,
+          statisticalNumber:0,     
+          color: 'white',
+          bgColor:'#56E2EE',          
+        }, 
+      ],
+    },
+  ]
+
+  AppointmentItems = [
+    {
+      title: STRINGS.WorkBench, //'工作台',
+      data: [
+        {
+          oclick:'12:20-13:30',
+          country:STRINGS.ClassTabs[0],
+          detail: STRINGS.AppointmentDetail1, 
+          State: '0/7/30',
+          borderColor: 'transparent',
+          bgColor:'#F79375',
+          teacherName: STRINGS.TeacherName[0],
+          progressState:30,      
+        },
+        {
+          oclick:'12:20-13:30',
+          country:STRINGS.ClassTabs[0],
+          detail: STRINGS.AppointmentDetail1, 
+          State: '0/7/30',
+          borderColor: 'transparent',
+          bgColor:'#F7C97D',
+          name: STRINGS.Name,
+          progressState:30,      
+        },
+        {
+          oclick:'12:20-13:30',
+          country:STRINGS.ClassTabs[0],
+          detail: STRINGS.AppointmentDetail1, 
+          State: '0/7/30',
+          borderColor: 'transparent',
+          bgColor:'#78EFB4',
+          name: STRINGS.Name,
+          progressState:30,      
+        },    
+      ],
+    },
+  ]
+
+  goBookingScreen = () => {
+    this.props.navigation.navigate('BookingScreen');
+  }
+  goAssignedScreen = () => {
+    this.props.navigation.navigate('AssignedScreen');
+  }
+  goMemberScreen = () => {
+    this.props.navigation.navigate('MemberScreen');
+  }
+  goVisitorScreen = () => {
+    this.props.navigation.navigate('VisitorScreen');
+  } 
+
+  todayOperate = () => {    
+    this.props.navigation.navigate('StatisticalScreen');
+  }
+
+  monthlySail = () => {    
+    this.props.navigation.navigate('MonthlySailScreen');
+  }
+
+  todayAppointment = () => {    
+    this.props.navigation.navigate('AppointmentScreen');
+  }
+
   render() {
     return (
       <ScrollView>        
@@ -107,6 +250,60 @@ export default class HomeScreen extends React.Component {
                 //   <Text style={styles.sectionHeader}>{title}</Text>
                 // )}
               />        
+            </View>    
+            <View style={styles.operateContainer}>
+              <View style={styles.operateContent}>
+                <Text>{STRINGS.TodayOperate}</Text>
+                <TouchableOpacity onPress={this.todayOperate}>
+                  <View style={{flexDirection:'row'}}>                
+                    <Text style={styles.statisticalTxt}>{STRINGS.StatisticalSpecification}</Text>
+                    <Icon name='ios-arrow-forward' size={18} color='#81F0B9' />
+                  </View>                
+                </TouchableOpacity>
+              </View> 
+
+              <View style={styles.operateBrefContent}>
+                <SectionGrid
+                  itemDimension={120}
+                  spacing={8}
+                  sections={this.StatisticalItems}
+                  keyExtractor={(item, index) => item + index}
+                  renderItem={({ item }) => <StatisticalItem item={item} />}
+                  itemContainerStyle = {styles.operateBrefItems}   
+                />  
+              </View>  
+
+              <TouchableOpacity style={styles.monthlySailContent} onPress={this.monthlySail}>
+                <Text>{STRINGS.MonthlySailTxt}</Text>
+                <View >
+                  <View style={{flexDirection:'row'}}>                    
+                    <Icon name='ios-arrow-forward' size={18} color='#81F0B9' />
+                  </View>                
+                </View>
+              </TouchableOpacity>
+
+              {/* Appointment screen */}
+              <View>                
+                <View style={styles.operateContent}>
+                  <Text>{STRINGS.TodaysAppointment}</Text>
+                  <TouchableOpacity onPress={this.todayAppointment}>
+                    <View style={{flexDirection:'row'}}>                
+                      <Text style={styles.statisticalTxt}>{STRINGS.More}</Text>
+                      <Icon name='ios-arrow-forward' size={18} color='#81F0B9' />
+                    </View>                
+                  </TouchableOpacity>
+                </View> 
+                <View style={styles.appointmentDetail}>
+                  <SectionGrid
+                    itemDimension={200}
+                    spacing={0}
+                    sections={this.AppointmentItems}
+                    keyExtractor={(item, index) => item + index}
+                    renderItem={({ item }) => <AppointmentItem item={item} />}
+                    itemContainerStyle = {styles.appointmentDetailItems}   
+                  />  
+                </View>
+              </View>
             </View>            
           </View>          
         </View>

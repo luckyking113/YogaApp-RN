@@ -15,7 +15,7 @@ export default class HomeHeaderComponent extends React.Component {
           <TouchableOpacity onPress={this.onPressIconHandler}>
             <Image
               style={{width: 40, height: 40}}
-              source={require('../../Assets/Images/baby.png')}
+              source={require('../../Assets/Images/homeIcon.png')}
             />
           </TouchableOpacity>
         </View>       

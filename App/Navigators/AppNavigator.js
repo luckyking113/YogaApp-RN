@@ -11,12 +11,16 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import ExampleScreen from 'App/Containers/Example/ExampleScreen';
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen';
 
+//Home screen
 import HomeScreen from '../Containers/HomeScreen/HomeScreen';
 import BookingScreen from '../Containers/BookingScreen/BookingScreen';
 import AssignedScreen from '../Containers/AssignedScreen/AssignedScreen';
 import MemberScreen from '../Containers/MemberScreen/MemberScreen';
 import VisitorScreen from '../Containers/VisitorScreen/VisitorScreen';
 import HomeHeaderComponent from '../Components/HomeHeader/HomeHeaderComponent';
+import StatisticalScreen from '../Containers/StatisticalScreen/StatisticalScreen';
+import MonthlySailScreen from '../Containers/MonthlySailScreen/MonthlySailScreen';
+import AppointmentScreen from '../Containers/AppointmentScreen/AppointmentScreen';
 
 import ActScreen from '../Containers/ActScreen/ActScreen';
 import BusinessScreen from '../Containers/BusinessScreen/BusinessScreen';
@@ -71,7 +75,26 @@ const TabNavigator = createBottomTabNavigator(
           navigationOptions: ({ navigation }) => ({
             title: 'VisitorScreen Screen', // Title to appear in status bar
           }),
-        }
+        },
+        StatisticalScreen:{
+          screen: StatisticalScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'StatisticalScreen Screen', // Title to appear in status bar
+          }),
+        },
+        MonthlySailScreen:{
+          screen: MonthlySailScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'MonthlySailScreen Screen', // Title to appear in status bar
+          }),
+        },
+        AppointmentScreen:{
+          screen: AppointmentScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: 'AppointmentScreen Screen', // Title to appear in status bar
+          }),
+        },
+
       }),
       navigationOptions: {
         // tabBarIcon: ({ focused, tintColor }) => {
