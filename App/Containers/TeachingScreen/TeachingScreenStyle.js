@@ -9,4 +9,15 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  videoContainer:{
+    ...ApplicationStyles.screen.container,
+  },
+  videoCard:{
+    marginTop:10,    
+  },
+  content:{
+    paddingHorizontal:10,
+    paddingVertical:15,
+    backgroundColor:'white'
+  }
 })
