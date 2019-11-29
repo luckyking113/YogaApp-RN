@@ -3,6 +3,7 @@ import {
   createAppContainer,
   createStackNavigator,
   createBottomTabNavigator,
+  createMaterialTopTabNavigator
 } from 'react-navigation';
 import { View, Text } from 'react-native';
 
@@ -23,9 +24,16 @@ import StatisticalScreen from '../Containers/StatisticalScreen/StatisticalScreen
 import MonthlySailScreen from '../Containers/MonthlySailScreen/MonthlySailScreen';
 import AppointmentScreen from '../Containers/AppointmentScreen/AppointmentScreen';
 
+//Tab2
 import ActScreen from '../Containers/ActScreen/ActScreen';
 import BusinessScreen from '../Containers/BusinessScreen/BusinessScreen';
 import StudyScreen from '../Containers/StudyScreen/StudyScreen';
+import TeachingScreen from '../Containers/TeachingScreen/TeachingScreen';
+import ManagementScreen from '../Containers/ManagementScreen/ManagementScreen';
+import OperateGuideScreen from '../Containers/OperateGuideScreen/OperateGuideScreen';
+import SuggestionScreen from '../Containers/SuggestionScreen/SuggestionScreen';
+import WarmWinterScreen from '../Containers/WarmWinterScreen/WarmWinterScreen';
+
 import ManageScreen from '../Containers/ManageScreen/ManageScreen';
 import Colors from '../Theme/Colors';
 
@@ -187,7 +195,96 @@ const TabNavigator = createBottomTabNavigator(
       // screen: ActScreen,
       screen: createStackNavigator({
         Study:{
-          screen: StudyScreen,
+          screen: createMaterialTopTabNavigator({
+            Teaching: {
+              screen:TeachingScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>{STRINGS.Teaching}</Text>               
+                    </View>
+                  )                  
+                },
+              },
+            },
+            Management: {
+              screen:ManagementScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>{STRINGS.Management}</Text>               
+                    </View>
+                  )                  
+                },
+              },
+            },
+            OperateGuide: {
+              screen:OperateGuideScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>{STRINGS.OperateGuide}</Text>               
+                    </View>
+                  )                  
+                },
+              },
+            },
+            Suggestion: {
+              screen:SuggestionScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>{STRINGS.Suggestion}</Text>               
+                    </View>
+                  )                  
+                },
+              },
+            },            
+            WarmWinter: {
+              screen:WarmWinterScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>{STRINGS.WarmWinter}</Text>               
+                    </View>
+                  )                  
+                },
+              },
+            },            
+          },
+          {
+            tabBarOptions: {  
+              activeTintColor: 'red',
+              inactiveTintColor:'red',
+              showIcon: true,  
+              showLabel:false,  
+              style: {  
+                  backgroundColor:'white'  
+              },
+              tabStyle: {
+              },   
+              iconStyle: {
+                width: 60,
+                height: 30,
+                padding:0       //Padding 0 here
+              },              
+            },
+          }),
           navigationOptions: ({ navigation }) => ({
             title: STRINGS.Study,
             header: (<Header title={STRINGS.Study}/>),             
