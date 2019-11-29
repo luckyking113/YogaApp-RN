@@ -4,12 +4,10 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { SectionGrid } from 'react-native-super-grid'
 
 import styles from './ManageScreenStyle'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler'
 import Colors from '../../Theme/Colors'
 
 import {STRINGS} from '../../Config'
-
-
 
 
 function Item({ item: { title, icon, color, onPressHandler } }) {
@@ -210,15 +208,19 @@ export default class ManageScreen extends React.Component {
 
   render() {
     return (
-      <SectionGrid
-        itemDimension={90}
-        sections={this.DATA}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => <Item item={item} />}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.sectionHeader}>{title}</Text>
-        )}
-      />
+      <ScrollView>   
+        <View style={styles.container}>
+          <SectionGrid
+            itemDimension={90}
+            sections={this.DATA}
+            keyExtractor={(item, index) => item + index}
+            renderItem={({ item }) => <Item item={item} />}
+            renderSectionHeader={({ section: { title } }) => (
+              <Text style={styles.sectionHeader}>{title}</Text>
+            )}
+          />
+        </View>
+      </ScrollView>
     )
   }
 }

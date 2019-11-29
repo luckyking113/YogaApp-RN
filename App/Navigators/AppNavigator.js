@@ -10,6 +10,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import ExampleScreen from 'App/Containers/Example/ExampleScreen';
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen';
+import Header from '../Components/HeaderComponent';
 
 //Home screen
 import HomeScreen from '../Containers/HomeScreen/HomeScreen';
@@ -108,16 +109,64 @@ const TabNavigator = createBottomTabNavigator(
       },
     },
     Act: {
-      screen: ActScreen,
+      // screen: ActScreen,
+      screen: createStackNavigator({
+        ActScreen:{
+          screen: ActScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: STRINGS.Action,
+            header: (<Header title={STRINGS.Action}/>),
+            // headerTitleStyle: { 
+            //   textAlign:"center", 
+            //   flex:1, 
+            // },       
+          })
+        }
+      },
+      {
+        initialRouteName: 'ActScreen',
+        /* The header config from HomeScreen is now here */
+        defaultNavigationOptions: {          
+          headerStyle: {
+            backgroundColor: '#79ECB3',            
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',                      
+          }          
+        },
+      }),
       navigationOptions: {
         title: STRINGS.Action,
         tabBarIcon: ({ focused, tintColor }) => {
           return <Icon name="ios-alarm" size={25} color={tintColor} />
         },
       },
-    },
+    },        
     Business: {
-      screen: BusinessScreen,
+      // screen: ActScreen,
+      screen: createStackNavigator({
+        Business:{
+          screen: BusinessScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: STRINGS.Business,
+            header: (<Header title={STRINGS.Business}/>),             
+          })
+        }
+      },
+      {
+        initialRouteName: 'Business',
+        /* The header config from HomeScreen is now here */
+        defaultNavigationOptions: {          
+          headerStyle: {
+            backgroundColor: '#79ECB3',            
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',                      
+          }          
+        },
+      }),
       navigationOptions: {
         title: STRINGS.Business,
         tabBarIcon: ({ focused, tintColor }) => {
@@ -125,10 +174,41 @@ const TabNavigator = createBottomTabNavigator(
         },
       },
     },
+    // Study: {
+    //   screen: StudyScreen,
+    //   navigationOptions: {
+    //     title: STRINGS.Study,
+    //     tabBarIcon: ({ focused, tintColor }) => {
+    //       return <Icon name="ios-laptop" size={25} color={tintColor} />
+    //     },
+    //   },
+    // },
     Study: {
-      screen: StudyScreen,
+      // screen: ActScreen,
+      screen: createStackNavigator({
+        Study:{
+          screen: StudyScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: STRINGS.Study,
+            header: (<Header title={STRINGS.Study}/>),             
+          })
+        }
+      },
+      {
+        initialRouteName: 'Study',
+        /* The header config from HomeScreen is now here */
+        defaultNavigationOptions: {          
+          headerStyle: {
+            backgroundColor: '#79ECB3',            
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',                      
+          }          
+        },
+      }),
       navigationOptions: {
-        title: STRINGS.Study,
+        title: STRINGS.Business,
         tabBarIcon: ({ focused, tintColor }) => {
           return <Icon name="ios-laptop" size={25} color={tintColor} />
         },
@@ -183,7 +263,7 @@ const TabNavigator = createBottomTabNavigator(
         {
           defaultNavigationOptions: {
             headerStyle: {
-              backgroundColor: Colors.primary,
+              backgroundColor: '#79ECB3',
             },
             headerTintColor: Colors.white,
           },

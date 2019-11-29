@@ -8,6 +8,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import Colors from '../../Theme/Colors';
 import {STRINGS} from '../../Config';
 
+import { ProgressBar } from 'react-native-paper';
+
 // import { SuperGridSectionList } from 'react-native-super-grid';
 
 var screenHeight = Dimensions.get('window').height; 
@@ -34,26 +36,28 @@ function StatisticalItem({ item: {statisticalNumber, title, bgColor } }) {
 
 function AppointmentItem({ item: {teacherName,country, oclick, detail,State, bgColor } }) {
   return (    
-    <View style={{width:'100%',flexDirection:'row', paddingHorizontal:50,height:100, borderRadius:0,justifyContent: 'space-between', alignItems: 'center', borderLeftWidth: 6, borderLeftColor:bgColor }}>        
-      <View>
-        <View style={{flexDirection:'row'}}>
-          <Text style={{}}>{oclick}</Text>
-          <View style={{backgroundColor:'#F7C97D',marginLeft:15,alignItems:'center', justifyContent:'center',width:40}}>
-            <Text style={{}}>{country}</Text>   
-          </View>          
-        </View>        
-        <Text style={styles.title}>{detail}</Text> 
-        <Text style={styles.title}>{State}</Text>      
-      </View>
-      <View>
-        <View style={{justifyContent:'center',marginTop:-23, alignItems:'center',flexDirection:'row'}}>
-          <Text>{teacherName}</Text>
-          <Image
-            style={{width: 30, height: 30, marginLeft:10}}
-            source={require('../../Assets/Images/homeIcon.png')}
-          />
+    <View style={{width:'100%',flexDirection:'row', paddingHorizontal:50,height:100, borderRadius:0,justifyContent: 'space-between', alignItems: 'center', borderLeftWidth: 6, borderLeftColor:bgColor }}>          
+      <View style={{flexDirection:'row', width:'100%',justifyContent: 'space-between'}}>
+        <View>
+          <View style={{flexDirection:'row'}}>
+            <Text style={{}}>{oclick}</Text>
+            <View style={{backgroundColor:'#F7C97D',marginLeft:15,alignItems:'center', justifyContent:'center',width:40}}>
+              <Text style={{}}>{country}</Text>   
+            </View>          
+          </View>        
+          <Text style={styles.title}>{detail}</Text>
+          <Text style={styles.title}>{State}</Text>      
         </View>
-      </View>      
+        <View>
+          <View style={{justifyContent:'flex-end',marginTop:0, alignItems:'center',flexDirection:'row'}}>
+            <Text>{teacherName}</Text>
+            <Image
+              style={{width: 30, height: 30, marginLeft:10}}
+              source={require('../../Assets/Images/homeIcon.png')}
+            />
+          </View>
+        </View>
+      </View>
     </View>
   )
 }
@@ -169,7 +173,7 @@ export default class HomeScreen extends React.Component {
           oclick:'12:20-13:30',
           country:STRINGS.ClassTabs[0],
           detail: STRINGS.AppointmentDetail1, 
-          State: '0/7/30',
+          State: '0/1/30',
           borderColor: 'transparent',
           bgColor:'#F79375',
           teacherName: STRINGS.TeacherName[0],
@@ -179,20 +183,20 @@ export default class HomeScreen extends React.Component {
           oclick:'12:20-13:30',
           country:STRINGS.ClassTabs[0],
           detail: STRINGS.AppointmentDetail1, 
-          State: '0/7/30',
+          State: '6/6/12',
           borderColor: 'transparent',
           bgColor:'#F7C97D',
-          name: STRINGS.Name,
+          teacherName: STRINGS.TeacherName[1],
           progressState:30,      
         },
         {
           oclick:'12:20-13:30',
           country:STRINGS.ClassTabs[0],
           detail: STRINGS.AppointmentDetail1, 
-          State: '0/7/30',
+          State: '7/7/12',
           borderColor: 'transparent',
           bgColor:'#78EFB4',
-          name: STRINGS.Name,
+          teacherName: STRINGS.TeacherName[2],
           progressState:30,      
         },    
       ],
@@ -229,7 +233,7 @@ export default class HomeScreen extends React.Component {
       <ScrollView>        
         <StatusBar backgroundColor="#79ECB3" />
         <View style={styles.container}>                
-          <View style={styles.homeSlideContainer}>
+          <View style={styles.homeSlideContainer}>          
             <SliderBox
               images={this.state.images}
               sliderBoxHeight={screenHeight/4}
@@ -269,7 +273,7 @@ export default class HomeScreen extends React.Component {
                   sections={this.StatisticalItems}
                   keyExtractor={(item, index) => item + index}
                   renderItem={({ item }) => <StatisticalItem item={item} />}
-                  itemContainerStyle = {styles.operateBrefItems}   
+                  // itemContainerStyle = {styles.operateBrefItems}   
                 />  
               </View>  
 
@@ -300,7 +304,7 @@ export default class HomeScreen extends React.Component {
                     sections={this.AppointmentItems}
                     keyExtractor={(item, index) => item + index}
                     renderItem={({ item }) => <AppointmentItem item={item} />}
-                    itemContainerStyle = {styles.appointmentDetailItems}   
+                    // itemContainerStyle = {styles.appointmentDetailItems}   
                   />  
                 </View>
               </View>

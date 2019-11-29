@@ -9,4 +9,22 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  actionContainer:{
+    flex:1,    
+    backgroundColor:'#F8F8F8',    
+  },
+  actionListBtn:{    
+    backgroundColor:'white',
+    height:60,    
+    marginHorizontal:5,    
+    padding:15,
+    justifyContent: 'center',  
+    borderRadius:5,    
+  },
+  actionListContainer:{
+    flex:1,    
+    flexDirection:'column',
+    justifyContent:'space-between'
+  },  
+
 })

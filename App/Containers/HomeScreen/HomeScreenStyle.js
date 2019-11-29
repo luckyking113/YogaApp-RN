@@ -25,7 +25,7 @@ export default StyleSheet.create({
   },
   tabItemContainer:{
     width:'22%',
-    textAlign:'center',
+    // textAlign:'center',
     alignItems:'center',    
   },
   tabItemBtn:{    
@@ -60,12 +60,7 @@ export default StyleSheet.create({
 
   appointmentDetail:{
     width:'100%'
-  },
-
-  appointmentDetailItems:{    
-    textAlign:'center',
-    alignItems:'center',
-  },
+  }, 
 
   monthlySailContent:{
     height:50,
