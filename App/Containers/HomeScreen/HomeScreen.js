@@ -68,9 +68,34 @@ export default class HomeScreen extends React.Component {
     this.state = {
       images: [
         'https://source.unsplash.com/1024x768/?nature',
-        'https://source.unsplash.com/1024x768/?water',        
+        'https://source.unsplash.com/1024x768/?water',
       ],      
     };
+  }
+
+  goBookingScreen = () => {    
+    this.props.navigation.navigate('AgentMission');
+  }
+  goAssignedScreen = () => {
+    this.props.navigation.navigate('AssignedScreen');
+  }
+  goMemberScreen = () => {
+    this.props.navigation.navigate('MemberScreen');
+  }
+  goVisitorScreen = () => {
+    this.props.navigation.navigate('VisitorScreen');
+  } 
+
+  todayOperate = () => {    
+    this.props.navigation.navigate('StatisticalScreen');
+  }
+
+  monthlySail = () => {    
+    this.props.navigation.navigate('MonthlySailScreen');
+  }
+
+  todayAppointment = () => {    
+    this.props.navigation.navigate('AppointmentScreen');
   }
 
   DATA = [
@@ -201,32 +226,7 @@ export default class HomeScreen extends React.Component {
         },    
       ],
     },
-  ]
-
-  goBookingScreen = () => {
-    this.props.navigation.navigate('BookingScreen');
-  }
-  goAssignedScreen = () => {
-    this.props.navigation.navigate('AssignedScreen');
-  }
-  goMemberScreen = () => {
-    this.props.navigation.navigate('MemberScreen');
-  }
-  goVisitorScreen = () => {
-    this.props.navigation.navigate('VisitorScreen');
-  } 
-
-  todayOperate = () => {    
-    this.props.navigation.navigate('StatisticalScreen');
-  }
-
-  monthlySail = () => {    
-    this.props.navigation.navigate('MonthlySailScreen');
-  }
-
-  todayAppointment = () => {    
-    this.props.navigation.navigate('AppointmentScreen');
-  }
+  ]  
 
   render() {
     return (

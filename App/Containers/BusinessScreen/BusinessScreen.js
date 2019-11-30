@@ -42,82 +42,82 @@ export default class BusinessScreen extends React.Component {
 
   DATA = [
     {
-      title: STRINGS.WorkBench, //'工作台',
+      title: '营销管理', //'工作台',
       data: [
         {
-          title: STRINGS.AgentMission, //'代约团课' AgentMission
-          icon: 'md-alarm',
+          title: '许愿墙', //'代约团课' AgentMission
+          icon: 'ios-heart-dislike',
           color: Colors.iconYellow,
           onPressHandler: this.go2AgentMission,
         },
         {
-          title: STRINGS.PersonalEducation, //'代约私教' PersonalEducation
+          title: '闺蜜同行', //'代约私教' PersonalEducation
           icon: 'md-body',
           color: Colors.iconPink,
           onPressHandler: this.go2PersonalEducation,
         },
         {
-          title: STRINGS.ScanCode, //'扫码签到' ScanCode
-          icon: 'ios-qr-scanner',
+          title: '拼团活动', //'扫码签到' ScanCode
+          icon: 'ios-chatbubbles',
           color: Colors.iconGreen,
           onPressHandler: this.go2ScanCode,
         },
         {
-          title: STRINGS.YogaHeadline, //'瑜伽头条' YogaHeadline
-          icon: 'ios-basket',
+          title: '秒杀活动', //'瑜伽头条' YogaHeadline
+          icon: 'ios-boat',
           color: Colors.iconFire,
           onPressHandler: this.go2YogaHeadline,
         },
         {
-          title: STRINGS.Configuration, //'小程序配置' Configuration
-          icon: 'ios-infinite',
+          title: '砍价活动', //'小程序配置' Configuration
+          icon: 'md-color-filter',
           color: Colors.iconYellow,
           onPressHandler: this.go2Configuration,
         },
         {
-          title: STRINGS.ExperienceManagement, //'体验课管理' ExperienceManagement
-          icon: 'ios-rocket',
+          title: '分销售卡', //'体验课管理' ExperienceManagement
+          icon: 'md-card',
           color: Colors.iconPink,
           onPressHandler: this.go2ExperienceManagement,
         },
         {
-          title: STRINGS.AgentMission, //'代约团课' AgentMission
-          icon: 'md-alarm',
+          title: '裂变分销', //'代约团课' AgentMission
+          icon: 'ios-git-network',
           color: Colors.iconYellow,
           onPressHandler: this.go2AgentMission,
         },
         {
-          title: STRINGS.PersonalEducation, //'代约私教' PersonalEducation
-          icon: 'md-body',
+          title: '短信管理', //'代约私教' PersonalEducation
+          icon: 'ios-chatboxes',
           color: Colors.iconPink,
           onPressHandler: this.go2PersonalEducation,
         },
         {
-          title: STRINGS.ScanCode, //'扫码签到' ScanCode
-          icon: 'ios-qr-scanner',
+          title: '生成海报', //'扫码签到' ScanCode
+          icon: 'md-filing',
           color: Colors.iconGreen,
           onPressHandler: this.go2ScanCode,
         },
         {
-          title: STRINGS.YogaHeadline, //'瑜伽头条' YogaHeadline
-          icon: 'ios-basket',
+          title: '优惠券', //'瑜伽头条' YogaHeadline
+          icon: 'md-tv',
           color: Colors.iconFire,
           onPressHandler: this.go2YogaHeadline,
         },
         {
-          title: STRINGS.Configuration, //'小程序配置' Configuration
-          icon: 'ios-infinite',
+          title: '视频课程', //'小程序配置' Configuration
+          icon: 'md-phone-landscape',
           color: Colors.iconYellow,
           onPressHandler: this.go2Configuration,
         },
         {
-          title: STRINGS.ExperienceManagement, //'体验课管理' ExperienceManagement
-          icon: 'ios-rocket',
+          title: '提现说明', //'体验课管理' ExperienceManagement
+          icon: 'md-filing',
           color: Colors.iconPink,
           onPressHandler: this.go2ExperienceManagement,
         },
         {
-          title: STRINGS.ExperienceManagement, //'体验课管理' ExperienceManagement
+          title: '活动报名', //'体验课管理' ExperienceManagement
           icon: 'ios-rocket',
           color: Colors.iconPink,
           onPressHandler: this.go2ExperienceManagement,
@@ -125,21 +125,22 @@ export default class BusinessScreen extends React.Component {
       ],
     },
     {
-      title: STRINGS.Member + '/' + STRINGS.Visitor + STRINGS.Manage, //'会员/访客管理',
+      // title: STRINGS.Member + '/' + STRINGS.Visitor + STRINGS.Manage, //'会员/访客管理',
+      title: '分销商城',
       data: [
         {
-          title: STRINGS.Member, //'会员',
-          icon: 'ios-bookmark',
+          title: '扫码核销', //'会员',
+          icon: 'md-cut',
           color: Colors.iconYellow,
         },
         {
-          title: STRINGS.Visitor, //'访客',
-          icon: 'ios-contact',
+          title: '代理商品', //'访客',
+          icon: 'md-gift',
           color: Colors.iconPink,
         },
         {
-          title: STRINGS.MemberCard, //'会员卡',
-          icon: 'ios-card',
+          title: '我的佣金', //'会员卡',
+          icon: 'md-business',
           color: Colors.iconGreen,
         },
       ],

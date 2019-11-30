@@ -19,5 +19,23 @@ export default StyleSheet.create({
     paddingHorizontal:10,
     paddingVertical:15,
     backgroundColor:'white'
+  },
+  backgroundVideo: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
+  overlay:{
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
+  overlaySet:{
+    flex:1,
+    flexDirection:'row'
   }
 })

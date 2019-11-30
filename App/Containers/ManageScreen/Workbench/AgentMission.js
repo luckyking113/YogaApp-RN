@@ -130,7 +130,7 @@ export default class AgentMission extends React.Component {
   render() {
     return (
       <View>
-        <View style = {{backgroundColor: Colors.primary, padding: 3, flexDirection: 'row',}}>
+        <View style = {{backgroundColor: '#79ECB3', padding: 3, flexDirection: 'row',}}>
           <View style={{flex:0.15}}>
             
           </View>
@@ -222,5 +222,4 @@ const styles = StyleSheet.create({
     width: ScreenWidth * 0.7,
     color: Colors.subText, 
   },
-
 })

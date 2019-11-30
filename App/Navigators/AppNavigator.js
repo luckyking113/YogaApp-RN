@@ -182,15 +182,6 @@ const TabNavigator = createBottomTabNavigator(
         },
       },
     },
-    // Study: {
-    //   screen: StudyScreen,
-    //   navigationOptions: {
-    //     title: STRINGS.Study,
-    //     tabBarIcon: ({ focused, tintColor }) => {
-    //       return <Icon name="ios-laptop" size={25} color={tintColor} />
-    //     },
-    //   },
-    // },
     Study: {
       // screen: ActScreen,
       screen: createStackNavigator({
@@ -318,12 +309,14 @@ const TabNavigator = createBottomTabNavigator(
             screen: ManageScreen,
             navigationOptions: ({ navigation }) => ({
               title: STRINGS.Manage, // Title to appear in status bar
+              header: (<Header title={STRINGS.Manage}/>), 
             }),
           },
           AgentMission: {
             screen: AgentMission,
             navigationOptions: ({ navigation }) => ({
-              title: navigation.getParam('Title', STRINGS.AgentMission), // Title to appear in status bar
+              title: navigation.getParam('Title', STRINGS.AgentMission), // Title to appear in status bar  
+              // header: (<Header title={STRINGS.AgentMission}/>)         
             }),
           },
           PersonalEducation: {
