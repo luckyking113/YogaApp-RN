@@ -29,11 +29,11 @@ function Item({ item: {id, title, starttime, endtime, stat, name, image, data, l
   return (
     <TouchableOpacity onPress={() => onItemClickHandler(id)}>
       <View style={styles.tableCell}>
-        <View style={{ width: 8, backgroundColor: lcolor }} />
+        <View style={{ width: 4, backgroundColor: lcolor }} />
         <View style={styles.tableCellData}>
 
           <View style={styles.datatableCellTime}>          
-            <Text style={{width:110, padding:1}}>{starttime}-{endtime}</Text>
+            <Text style={{width:110}}>{starttime}-{endtime}</Text>
             <Text style={{backgroundColor:'#eeaa00', color:'white', padding:1}}> {stat} </Text>
           </View>
           <View style={styles.datatableCellTitle}>          
@@ -139,11 +139,11 @@ export default class AgentMission extends React.Component {
               values={STRINGS.ClassTabs}
               selectedIndex={this.state.selectedIndex}
               onTabPress={this.onTabChangedHandler}
-              tabsContainerStyle={{borderWidth: 0, backgroundColor: Colors.primary,}}
+              tabsContainerStyle={{borderWidth: 0, backgroundColor: Colors.lightGreen,}}
               tabTextStyle={{color: Colors.white}}
-              tabStyle={{borderWidth: 0, backgroundColor: Colors.primary}}
-              activeTabStyle={{backgroundColor: Colors.primary, borderBottomWidth: 4, borderBottomColor: Colors.white, color: Colors.white}}
-            />            
+              tabStyle={{borderWidth: 0, backgroundColor: Colors.lightGreen}}
+              activeTabStyle={{backgroundColor:'transparent',borderBottomWidth: 4, borderBottomColor: Colors.white, color: Colors.white}}
+            />
           </View>
           <View style={{flex:0.15, justifyContent: 'center', alignItems: 'center',}}>
             <Icon name={'export'} size={25} color={Colors.white} ></Icon>
@@ -196,10 +196,7 @@ const styles = StyleSheet.create({
     height: 30,
   },
   tableCellData: {
-    flex: 1,
-    padding: 5,
-    paddingLeft: 30,
-    width: ScreenWidth * 0.9,
+    flex: 1,            
     color: Colors.mainText, 
   },
   datatableCellTitle: {

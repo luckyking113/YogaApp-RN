@@ -33,6 +33,7 @@ import ManagementScreen from '../Containers/ManagementScreen/ManagementScreen';
 import OperateGuideScreen from '../Containers/OperateGuideScreen/OperateGuideScreen';
 import SuggestionScreen from '../Containers/SuggestionScreen/SuggestionScreen';
 import WarmWinterScreen from '../Containers/WarmWinterScreen/WarmWinterScreen';
+import RegisterLession from '../Containers/RegisterLession/RegisterLession';
 
 import ManageScreen from '../Containers/ManageScreen/ManageScreen';
 import Colors from '../Theme/Colors';
@@ -50,15 +51,31 @@ import ExperienceManagement from '../Containers/ManageScreen/Workbench/Experienc
 const TabNavigator = createBottomTabNavigator(
   {
     Home: {
-      screen: createStackNavigator({
-        // screen:HomeScreen,
-        // navigationOptions: ({ navigation }) => ({
-        //   title: STRINGS.ExperienceManagement, // Title to appear in status bar
-        // }),
+      screen: createStackNavigator({        
+        // HomeScreen: {
+        //   screen: HomeScreen,
+        //   navigationOptions: ({ navigation }) => ({
+        //     header: (<HomeHeaderComponent />),            
+        //   }),
+        // },
         HomeScreen: {
-          screen: HomeScreen,
+          screen: createStackNavigator({
+            HomeScreen: {
+              screen: HomeScreen,
+              navigationOptions: ({ navigation }) => ({
+                header: (<HomeHeaderComponent />),            
+              }),
+            },
+            RegisterLession: {
+              screen: RegisterLession,
+              navigationOptions: ({ navigation }) => ({
+                header: (<Header title={STRINGS.Manage}/>),        
+              }),
+            },
+          }),
           navigationOptions: ({ navigation }) => ({
-            header: (<HomeHeaderComponent />),            
+            header: null,
+            initialRouteName: 'HomeScreen',
           }),
         },
         BookingScreen:{
@@ -368,7 +385,7 @@ const TabNavigator = createBottomTabNavigator(
     },
   },
   {
-    tabBarOptions: { activeTintColor: Colors.primary },
+    tabBarOptions: { activeTintColor: '#79ECB3' },
   }
 )
 

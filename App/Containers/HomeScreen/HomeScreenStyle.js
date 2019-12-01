@@ -72,4 +72,11 @@ export default StyleSheet.create({
     flexDirection:'row',
     justifyContent:'space-between'
   },
+
+  datatableCellSubtitle: {
+    flex: 1,    
+    width: '100%',
+    color: Colors.subText, 
+    marginTop:5,
+  },
 })
