@@ -11,7 +11,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import ExampleScreen from 'App/Containers/Example/ExampleScreen';
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen';
-import Header from '../Components/HeaderComponent';
+import TabHeader from '../Components/TabHeaderComponent';
+import RegisterHeader from '../Components/RegisterHeader';
+import HeaderWithBackBtn from '../Components/HeaderWithBackBtn';
 
 //Home screen
 import HomeScreen from '../Containers/HomeScreen/HomeScreen';
@@ -26,6 +28,9 @@ import AppointmentScreen from '../Containers/AppointmentScreen/AppointmentScreen
 
 //Tab2
 import ActScreen from '../Containers/ActScreen/ActScreen';
+import SystemNotificationScreen from '../Containers/SystemNotificationScreen/SystemNotificationScreen';
+
+
 import BusinessScreen from '../Containers/BusinessScreen/BusinessScreen';
 import StudyScreen from '../Containers/StudyScreen/StudyScreen';
 import TeachingScreen from '../Containers/TeachingScreen/TeachingScreen';
@@ -55,7 +60,7 @@ const TabNavigator = createBottomTabNavigator(
         // HomeScreen: {
         //   screen: HomeScreen,
         //   navigationOptions: ({ navigation }) => ({
-        //     header: (<HomeHeaderComponent />),            
+        //     header: (<HomeHeaderComponent />),     
         //   }),
         // },
         HomeScreen: {
@@ -69,7 +74,7 @@ const TabNavigator = createBottomTabNavigator(
             RegisterLession: {
               screen: RegisterLession,
               navigationOptions: ({ navigation }) => ({
-                header: (<Header title={STRINGS.Manage}/>),        
+                header: (<RegisterHeader title={STRINGS.Manage} navigation = {navigation} />),        
               }),
             },
           }),
@@ -140,7 +145,18 @@ const TabNavigator = createBottomTabNavigator(
           screen: ActScreen,
           navigationOptions: ({ navigation }) => ({
             title: STRINGS.Action,
-            header: (<Header title={STRINGS.Action}/>),
+            header: (<TabHeader title={STRINGS.Action}/>),
+            // headerTitleStyle: { 
+            //   textAlign:"center", 
+            //   flex:1, 
+            // },       
+          })
+        },
+        SystemNotificationScreen:{
+          screen: SystemNotificationScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: STRINGS.Action,
+            header: (<HeaderWithBackBtn title={STRINGS.SystemNotification} navigation = {navigation} />),  
             // headerTitleStyle: { 
             //   textAlign:"center", 
             //   flex:1, 
@@ -175,7 +191,7 @@ const TabNavigator = createBottomTabNavigator(
           screen: BusinessScreen,
           navigationOptions: ({ navigation }) => ({
             title: STRINGS.Business,
-            header: (<Header title={STRINGS.Business}/>),             
+            header: (<TabHeader title={STRINGS.Business}/>),             
           })
         }
       },
@@ -295,7 +311,7 @@ const TabNavigator = createBottomTabNavigator(
           }),
           navigationOptions: ({ navigation }) => ({
             title: STRINGS.Study,
-            header: (<Header title={STRINGS.Study}/>),             
+            header: (<TabHeader title={STRINGS.Study}/>),             
           })
         }
       },
@@ -326,14 +342,14 @@ const TabNavigator = createBottomTabNavigator(
             screen: ManageScreen,
             navigationOptions: ({ navigation }) => ({
               title: STRINGS.Manage, // Title to appear in status bar
-              header: (<Header title={STRINGS.Manage}/>), 
+              header: (<TabHeader title={STRINGS.Manage}/>), 
             }),
           },
           AgentMission: {
             screen: AgentMission,
             navigationOptions: ({ navigation }) => ({
               title: navigation.getParam('Title', STRINGS.AgentMission), // Title to appear in status bar  
-              // header: (<Header title={STRINGS.AgentMission}/>)         
+              // header: (<TabHeader title={STRINGS.AgentMission}/>)         
             }),
           },
           PersonalEducation: {

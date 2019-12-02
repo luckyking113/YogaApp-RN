@@ -26,6 +26,10 @@ function Item({ item: { title, bgColor, icon, iconColor, onPressHandler } }) {
 }
 
 export default class ActScreen extends React.Component {
+  goNotificationScreen = () => {
+    this.props.navigation.navigate('SystemNotificationScreen');
+  }
+
   DATA = [
     {
       title: STRINGS.WorkBench, //'工作台',
