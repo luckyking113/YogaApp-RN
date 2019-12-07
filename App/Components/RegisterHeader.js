@@ -36,7 +36,7 @@ export default class RegisterHeader extends React.Component {
                     <Text style={{fontSize:20,color: 'white', textAlign: 'center'}}>{this.props.title}</Text>
                 </View>
                 <View>
-                    <Icon name='plus' size={20} color='white' />
+                    {/* <Icon name='plus' size={20} color='white' /> */}
                 </View>
             </View>
         )        

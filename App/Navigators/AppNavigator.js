@@ -76,7 +76,7 @@ const TabNavigator = createBottomTabNavigator(
             RegisterLession: {
               screen: RegisterLession,
               navigationOptions: ({ navigation }) => ({
-                header: (<RegisterHeader title={STRINGS.Manage} navigation = {navigation} />),        
+                header: (<RegisterHeader title={STRINGS.RegisterDetail} navigation = {navigation} />),        
               }),
             },
           }),
@@ -422,7 +422,8 @@ const StackNavigator = createStackNavigator(
   {
     // Create the application routes here (the key is the route name, the value is the target screen)
     // See https://reactnavigation.org/docs/en/stack-navigator.html#routeconfigs
-    MainScreen: SplashScreen,
+    // MainScreen: SplashScreen,
+    MainScreen:TabNavigator,
     LoginScreen: LoginScreen,
     // The main application screen is our "ExampleScreen". Feel free to replace it with your
     // own screen and remove the example.
@@ -430,7 +431,7 @@ const StackNavigator = createStackNavigator(
   },
   {
     // By default the application will show the splash screen
-    initialRouteName: 'MainScreen',
+    initialRouteName: 'HomeNavigator',
     // See https://reactnavigation.org/docs/en/stack-navigator.html#stacknavigatorconfig
     headerMode: 'none',
   }

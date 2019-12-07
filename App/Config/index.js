@@ -25,6 +25,7 @@ export const STRINGS = {
   TeacherName:['小姜','高老师', '小路'],
 
   AppointmentDetail1:'哈他瑜伽',
+  RegisterDetail:'Register Detail',
 
   // Tab 2
   Action: '待办',

@@ -233,7 +233,6 @@ export default class HomeScreen extends React.Component {
                     </View>                
                   </TouchableOpacity>
                 </View>
-
                 <View style={styles.appointmentDetail}>
                   <AppointmentList navigation = {this.props.navigation}/>
                 </View>

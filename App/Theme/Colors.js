@@ -11,6 +11,7 @@ export default {
   text: '#212529',
   primary: '#519872',
   white: '#fff',
+  black:'#000',
   success: '#28a745',
   error: '#dc3545',
   sectionHeader: '#eee',
