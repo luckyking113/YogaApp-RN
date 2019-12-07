@@ -19,8 +19,7 @@ function Item({ item: { title, bgColor, icon, iconColor, onPressHandler } }) {
         <View style={{alignSelf:'center'}}>
           <Icon name='ios-arrow-forward' size={18} color='#B8B8B8' />
         </View>
-      </View>
-      
+      </View>      
     </TouchableOpacity>  
   )
 }
@@ -28,6 +27,14 @@ function Item({ item: { title, bgColor, icon, iconColor, onPressHandler } }) {
 export default class ActScreen extends React.Component {
   goNotificationScreen = () => {
     this.props.navigation.navigate('SystemNotificationScreen');
+  }
+
+  goAssistantScreen = () => {
+    this.props.navigation.navigate('SystemNotificationScreen');
+  }
+
+  goNoClassDaysScreen = () => {
+    this.props.navigation.navigate('NoClassDaysScreen');
   }
 
   DATA = [
@@ -48,27 +55,27 @@ export default class ActScreen extends React.Component {
           bgColor:'#F7C97D',
           onPressHandler: this.goAssistantScreen,
         },
-        {
-          title: STRINGS.MembershipPeriod,
-          icon: 'ios-calendar',
-          iconColor: 'white',
-          bgColor:'#73F583',
-          onPressHandler: this.goMembershipPeriodScreen,
-        },
-        {
-          title: STRINGS.MemberBirth, 
-          icon: 'ios-heart-empty',
-          iconColor: 'white',
-          bgColor:'#63D9E5',
-          onPressHandler: this.goMemberBirthScreen,
-        },  
-        {
-          title: STRINGS.MembershipCard, 
-          icon: 'md-card',
-          iconColor: 'white',
-          bgColor:'#F2A482',
-          onPressHandler: this.goMembershipCardScreen,
-        },
+        // {
+        //   title: STRINGS.MembershipPeriod,
+        //   icon: 'ios-calendar',
+        //   iconColor: 'white',
+        //   bgColor:'#73F583',
+        //   onPressHandler: this.goMembershipPeriodScreen,
+        // },
+        // {
+        //   title: STRINGS.MemberBirth, 
+        //   icon: 'ios-heart-empty',
+        //   iconColor: 'white',
+        //   bgColor:'#63D9E5',
+        //   onPressHandler: this.goMemberBirthScreen,
+        // },  
+        // {
+        //   title: STRINGS.MembershipCard, 
+        //   icon: 'md-card',
+        //   iconColor: 'white',
+        //   bgColor:'#F2A482',
+        //   onPressHandler: this.goMembershipCardScreen,
+        // },
         {
           title: STRINGS.NoClassDays, 
           icon: 'md-calendar',

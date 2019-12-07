@@ -11,6 +11,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import ExampleScreen from 'App/Containers/Example/ExampleScreen';
 import SplashScreen from 'App/Containers/SplashScreen/SplashScreen';
+import LoginScreen from 'App/Containers/LoginScreen/LoginScreen';
 import TabHeader from '../Components/TabHeaderComponent';
 import RegisterHeader from '../Components/RegisterHeader';
 import HeaderWithBackBtn from '../Components/HeaderWithBackBtn';
@@ -29,6 +30,7 @@ import AppointmentScreen from '../Containers/AppointmentScreen/AppointmentScreen
 //Tab2
 import ActScreen from '../Containers/ActScreen/ActScreen';
 import SystemNotificationScreen from '../Containers/SystemNotificationScreen/SystemNotificationScreen';
+import NoClassDaysScreen from '../Containers/NoClassDaysScreen/NoClassDaysScreen';
 
 
 import BusinessScreen from '../Containers/BusinessScreen/BusinessScreen';
@@ -154,6 +156,17 @@ const TabNavigator = createBottomTabNavigator(
         },
         SystemNotificationScreen:{
           screen: SystemNotificationScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: STRINGS.Action,
+            header: (<HeaderWithBackBtn title={STRINGS.SystemNotification} navigation = {navigation} />),  
+            // headerTitleStyle: { 
+            //   textAlign:"center", 
+            //   flex:1, 
+            // },       
+          })
+        },
+        NoClassDaysScreen:{
+          screen: NoClassDaysScreen,
           navigationOptions: ({ navigation }) => ({
             title: STRINGS.Action,
             header: (<HeaderWithBackBtn title={STRINGS.SystemNotification} navigation = {navigation} />),  
@@ -409,14 +422,15 @@ const StackNavigator = createStackNavigator(
   {
     // Create the application routes here (the key is the route name, the value is the target screen)
     // See https://reactnavigation.org/docs/en/stack-navigator.html#routeconfigs
-    SplashScreen: SplashScreen,
+    MainScreen: SplashScreen,
+    LoginScreen: LoginScreen,
     // The main application screen is our "ExampleScreen". Feel free to replace it with your
     // own screen and remove the example.
-    MainScreen: TabNavigator,
+    HomeNavigator: TabNavigator,
   },
   {
     // By default the application will show the splash screen
-    initialRouteName: 'SplashScreen',
+    initialRouteName: 'MainScreen',
     // See https://reactnavigation.org/docs/en/stack-navigator.html#stacknavigatorconfig
     headerMode: 'none',
   }

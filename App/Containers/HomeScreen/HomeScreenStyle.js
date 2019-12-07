@@ -41,7 +41,7 @@ export default StyleSheet.create({
     alignItems: 'center',    
     backgroundColor:'white',
     marginTop:10,
-    paddingHorizontal:15,    
+    paddingHorizontal:15,
     flexDirection:'row',
     justifyContent:'space-between'
   },

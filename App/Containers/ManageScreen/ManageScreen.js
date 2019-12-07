@@ -21,10 +21,26 @@ function Item({ item: { title, icon, color, onPressHandler } }) {
 
 export default class ManageScreen extends React.Component {
 
-  //'工作台' session handlers
+  //'工作台' session handlersv
   go2AgentMission = () => {
     this.props.navigation.navigate('AgentMission');
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Cn 
   go2PersonalEducation = () => {
     this.props.navigation.navigate('PersonalEducation');
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet,Text, View, Image,ScrollView, Dimensions, StatusBar } from 'react-native';
+import { Text, View, ScrollView, Dimensions, StatusBar } from 'react-native';
 import styles from './HomeScreenStyle';
 import { SliderBox } from 'react-native-image-slider-box';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -8,8 +8,9 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import Colors from '../../Theme/Colors';
 import {STRINGS} from '../../Config';
 import { StackedBarChart } from 'react-native-svg-charts';
+import AppointmentList from '../../Components/AppointmentList/AppointmentList';
 
-import { ProgressBar } from 'react-native-paper';
+const screenWidth = Math.round(Dimensions.get('window').width);
 
 // import { SuperGridSectionList } from 'react-native-super-grid';
 
@@ -35,47 +36,6 @@ function StatisticalItem({ item: {statisticalNumber, title, bgColor } }) {
   )
 }
 
-function AppointmentItem({ item: {teacherName,country, data, oclick, detail,State, bgColor,onPressHandler } }) {
-  return (
-    <TouchableOpacity onPress={onPressHandler}>
-      <View style={{width:'100%',flexDirection:'column', paddingHorizontal:50,height:100, borderRadius:0,justifyContent: 'space-between', paddingTop:18, alignItems: 'center', borderLeftWidth: 6, borderLeftColor:bgColor }}>          
-        <View style={{flexDirection:'row', width:'100%',justifyContent: 'space-between'}}>
-          <View>
-            <View style={{flexDirection:'row'}}>
-              <Text>{oclick}</Text>
-              <View style={{backgroundColor:'#F7C97D',marginLeft:15,alignItems:'center', justifyContent:'center',width:40}}>
-                <Text>{country}</Text>   
-              </View>          
-            </View>        
-            <Text style={styles.title}>{detail}</Text>
-            <Text style={styles.title}>{State}</Text>      
-          </View>
-          <View>
-            <View style={{justifyContent:'flex-end',marginTop:0, alignItems:'center',flexDirection:'row'}}>
-              <Text>{teacherName}</Text>
-              <Image
-                style={{width: 30, height: 30, marginLeft:10}}
-                source={require('../../Assets/Images/homeIcon.png')}
-              />
-            </View>
-          </View>
-        </View>
-        <View style={styles.datatableCellSubtitle}>        
-          <StackedBarChart
-              style={ { height: 5,  width: '100%' } }
-              keys={ [ 'a', 'b', 'c' ] }
-              colors={ [ Colors.iconOrange, Colors.iconDGreen, Colors.lightGrey ] }
-              data={ data }
-              showGrid={ false }
-              contentInset={ { top: 30, bottom: 30 } }
-              horizontal={true}
-          />
-        </View>  
-      </View>
-    </TouchableOpacity>
-  )
-}
-
 export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -87,9 +47,6 @@ export default class HomeScreen extends React.Component {
     };
   }
 
-  goRegisterLessionScreen = () => {
-    this.props.navigation.navigate('RegisterLession');
-  }
   goBookingScreen = () => {    
     this.props.navigation.navigate('AgentMission');
   }
@@ -207,55 +164,11 @@ export default class HomeScreen extends React.Component {
     },
   ]
 
-  AppointmentItems = [
-    {
-      title: STRINGS.WorkBench, //'工作台',
-      data: [
-        {
-          oclick:'12:20-13:30',
-          country:STRINGS.ClassTabs[0],
-          detail: STRINGS.AppointmentDetail1, 
-          State: '0/1/30',
-          borderColor: 'transparent',
-          bgColor:'#F79375',
-          teacherName: STRINGS.TeacherName[0],
-          progressState:30,  
-          data: [{a:2, b:3, c:8}],   
-          onPressHandler:this.goRegisterLessionScreen       
-        },
-        {
-          oclick:'12:20-13:30',
-          country:STRINGS.ClassTabs[0],
-          detail: STRINGS.AppointmentDetail1, 
-          State: '6/6/12',
-          borderColor: 'transparent',
-          bgColor:'#F7C97D',
-          teacherName: STRINGS.TeacherName[1],
-          progressState:30,  
-          data: [{a:0, b:8, c:8}],    
-          onPressHandler:this.goRegisterLessionScreen 
-        },
-        {
-          oclick:'12:20-13:30',
-          country:STRINGS.ClassTabs[0],
-          detail: STRINGS.AppointmentDetail1, 
-          State: '7/7/12',
-          borderColor: 'transparent',
-          bgColor:'#78EFB4',
-          teacherName: STRINGS.TeacherName[2],
-          progressState:30,    
-          data: [{a:6, b:1, c:4}], 
-          onPressHandler:this.goRegisterLessionScreen 
-        },    
-      ],
-    },
-  ]  
-
   render() {
     return (
       <ScrollView>        
         <StatusBar backgroundColor="#79ECB3" />
-        <View style={styles.container}>                
+        <View style={styles.container}>          
           <View style={styles.homeSlideContainer}>          
             <SliderBox
               images={this.state.images}
@@ -291,7 +204,7 @@ export default class HomeScreen extends React.Component {
 
               <View style={styles.operateBrefContent}>
                 <SectionGrid
-                  itemDimension={120}
+                  itemDimension={screenWidth * .4}
                   spacing={8}
                   sections={this.StatisticalItems}
                   keyExtractor={(item, index) => item + index}
@@ -319,16 +232,10 @@ export default class HomeScreen extends React.Component {
                       <Icon name='ios-arrow-forward' size={18} color='#81F0B9' />
                     </View>                
                   </TouchableOpacity>
-                </View> 
+                </View>
+
                 <View style={styles.appointmentDetail}>
-                  <SectionGrid
-                    itemDimension={200}
-                    spacing={0}
-                    sections={this.AppointmentItems}
-                    keyExtractor={(item, index) => item + index}
-                    renderItem={({ item }) => <AppointmentItem item={item} />}
-                    // itemContainerStyle = {styles.appointmentDetailItems}   
-                  />  
+                  <AppointmentList navigation = {this.props.navigation}/>
                 </View>
               </View>
             </View>            
