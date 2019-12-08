@@ -2,7 +2,10 @@ export const Config = {
   API_URL: 'https://jsonplaceholder.typicode.com/users/',
 }
 
-export const STRINGS = {
+export const STRINGS = {  
+  CardSailAnylizing:'售卡统计',
+  Filter: '筛选',
+
   // Tab 1
   Home: '首页',
 
@@ -25,7 +28,7 @@ export const STRINGS = {
   TeacherName:['小姜','高老师', '小路'],
 
   AppointmentDetail1:'哈他瑜伽',
-  RegisterDetail:'Register Detail',
+  RegisterDetail:'预约详情',
 
   // Tab 2
   Action: '待办',

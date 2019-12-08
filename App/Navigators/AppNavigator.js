@@ -15,6 +15,7 @@ import LoginScreen from 'App/Containers/LoginScreen/LoginScreen';
 import TabHeader from '../Components/TabHeaderComponent';
 import RegisterHeader from '../Components/RegisterHeader';
 import HeaderWithBackBtn from '../Components/HeaderWithBackBtn';
+import HeaderWithBtnRTxt from '../Components/HeaderWithBtnRTxt';
 
 //Home screen
 import HomeScreen from '../Containers/HomeScreen/HomeScreen';
@@ -118,7 +119,7 @@ const TabNavigator = createBottomTabNavigator(
         MonthlySailScreen:{
           screen: MonthlySailScreen,
           navigationOptions: ({ navigation }) => ({
-            title: 'MonthlySailScreen Screen', // Title to appear in status bar
+            header: (<HeaderWithBtnRTxt title={STRINGS.CardSailAnylizing} navigation = {navigation} RText={STRINGS.Filter} />),        
           }),
         },
         AppointmentScreen:{

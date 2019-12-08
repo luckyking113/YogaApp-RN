@@ -26,7 +26,93 @@ export default StyleSheet.create({
     marginTop: -30   
   },
   DetailTxt:{
-    fontSize:Font.size.h5,
+    fontSize:Font.size.input,
     color:Colors.black,
+  },
+  detailCardHeader:{
+    paddingHorizontal:15,
+    backgroundColor:'white',
+    marginBottom:10, 
+    height:60, 
+    justifyContent:'center',    
+    borderRadius: 2,
+    borderColor: '#ddd',
+    borderBottomWidth: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 1,
+  },
+  detailCard:{
+    paddingHorizontal:15,
+    backgroundColor:'white',
+    marginBottom:10, 
+    // height:100, 
+    justifyContent:'center',    
+    borderRadius: 2,
+    borderColor: '#ddd',
+    borderBottomWidth: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 1,    
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    paddingVertical:20
+  },
+  cardLeftContent:{
+    flexDirection:'row',
+    justifyContent:'space-between',    
+  },
+  cardImage:{
+    width:50,
+    height:50,    
+    justifyContent:'center',
+    alignItems:'center',
+    alignSelf:'center'
+  },
+  leftTxt:{
+    marginLeft:15,
+    alignItems:'flex-start',
+    justifyContent:'space-between',    
+  },
+  image:{
+    width:'100%',
+    height:'100%'
+  },
+  cardRightContent:{
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  topBtn:{
+    backgroundColor:Colors.lightGreen,
+    height:25,
+    width:80,
+    justifyContent:'center',
+    alignItems:'center',
+    marginBottom:10
+  },
+  topBtnTxt:{
+    color:'white',
+    fontSize:Font.size.small
+  },
+  BottomBtn:{    
+    height:25,
+    width:80,
+    justifyContent:'center',
+    alignItems:'center',
+    borderColor:Colors.lightGreen,
+    borderWidth:1,
+  },
+  bottomBtnTxt:{
+    color:'rgba(0,0,0,0.6)',
+    fontSize:Font.size.small
+  },
+  leftTxtFont:{
+    fontSize:Font.size.medium,
+    marginBottom:5
   }
 })
