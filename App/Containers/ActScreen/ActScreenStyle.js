@@ -11,7 +11,7 @@ export default StyleSheet.create({
   },
   actionContainer:{
     flex:1,    
-    backgroundColor:'#F8F8F8',    
+    backgroundColor:'#ededed',    
   },
   actionListBtn:{    
     backgroundColor:'white',

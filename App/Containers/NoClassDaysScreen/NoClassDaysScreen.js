@@ -1,23 +1,24 @@
 import React from 'react'
-import { Text, View,Image } from 'react-native';
+import { Switch, Text, View,Image } from 'react-native';
 import styles from './NoClassDaysScreenStyle';
 import { TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
 import { SectionGrid } from 'react-native-super-grid';
 import { STRINGS} from '../../Config';
-import { white } from 'ansi-colors';
+import { white, gray } from 'ansi-colors';
 import Icon from 'react-native-vector-icons/AntDesign';
 
 function Item({ item: { name, date, logo_imgPath, content }}){
   return (
+    
     <View>   
         <View style={{flex:1, flexDirection:"row", alignItems:'stretch', height: 100, marginLeft:10, marginRight:10}}>
-            <View style={{width:100, height:100, flex:1, justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
+            <View style={{ width:100, height:100, flex:1, justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
                 <Image
-                    style={{width: 80, height: 80, borderRadius:80 }}              
+                    style={{width: 50, height: 50, borderRadius:50 }}              
                     source={{uri: logo_imgPath}}
                     />
             </View>
-            <View style={{height:100, flex:3, flexDirection:'column',justifyContent:'center'}}>            
+            <View style={{height:100, flex:2.5, flexDirection:'column',justifyContent:'center'}}>            
                 <Text>
                     {name}
                 </Text>
@@ -28,55 +29,89 @@ function Item({ item: { name, date, logo_imgPath, content }}){
                     {content}
                 </Text>  
             </View>
+            <View style={{flex:1}}>
+              <View style={{flex:1, flexDirection:'row', justifyContent:'space-around', alignItems: 'flex-end'}}>
+                <Icon name={"mail"} size={20} color={'#e0e0e0'} /> 
+                <Icon name={"phone"} size={20} color={'#e0e0e0'} /> 
+              </View>              
+            </View>
         </View>        
-        <View style={{width:5000, height:1, backgroundColor:'gray', marginTop:10, marginBottom:10}}/>
+        <View style={{width:5000, height:1, backgroundColor:'#e0e0e0', marginTop:10, marginBottom:10}}/>
     </View>
   )
 }
 
 export default class NoClassDaysScreen extends React.Component {
 
+  state = {switchValue:false}
+  toggleSwitch = (Value) => {
+    this.setState({switchValue: Value})
+  }
+
   DATA = [
     {
       data: [
         {
-          name: "Alejjjx",
+          name: "Alex",
           date:STRINGS.CardTitle1[0], 
-          logo_imgPath:"https://facebook.github.io/react-native/img/tiny_logo.png",
+          logo_imgPath:"https://d33v4339jhl8k0.cloudfront.net/docs/assets/55d20ae1e4b089486cadc329/images/57d86db1903360216365887f/file-FbUn7SYVJy.png",
           content: STRINGS.CardTitle2[0]
         },
         {
             name: "Thomas",
             date:STRINGS.CardTitle1[0], 
-            logo_imgPath:"https://facebook.github.io/react-native/img/tiny_logo.png",
+            logo_imgPath:"https://www.trzcacak.rs/myfile/detail/397-3971790_sri-ganesh-hd-transparent-png-images-vinayagar-images.png",
             content: STRINGS.CardTitle2[0]
           },
           {
             name: 'Stefan',
             date:STRINGS.CardTitle1[0], 
+            logo_imgPath:"http://www.pngmart.com/files/10/Fashionable-Women-Wearing-Sunglasses-PNG.png",
+            content: STRINGS.CardTitle2[0]
+          },
+          {
+            name: "Alex",
+            date:STRINGS.CardTitle1[0], 
             logo_imgPath:"https://facebook.github.io/react-native/img/tiny_logo.png",
             content: STRINGS.CardTitle2[0]
-          }
-        ]
-    }
+          },
+          {
+            name: "Alex",
+            date:STRINGS.CardTitle1[0], 
+            logo_imgPath:"https://d33v4339jhl8k0.cloudfront.net/docs/assets/55d20ae1e4b089486cadc329/images/57d86db1903360216365887f/file-FbUn7SYVJy.png",
+            content: STRINGS.CardTitle2[0]
+          },
+          {
+              name: "Thomas",
+              date:STRINGS.CardTitle1[0], 
+              logo_imgPath:"https://www.trzcacak.rs/myfile/detail/397-3971790_sri-ganesh-hd-transparent-png-images-vinayagar-images.png",
+              content: STRINGS.CardTitle2[0]
+            },
+            {
+              name: 'Stefan',
+              date:STRINGS.CardTitle1[0], 
+              logo_imgPath:"http://www.pngmart.com/files/10/Fashionable-Women-Wearing-Sunglasses-PNG.png",
+              content: STRINGS.CardTitle2[0]
+            },
+            {
+              name: "Alex",
+              date:STRINGS.CardTitle1[0], 
+              logo_imgPath:"https://facebook.github.io/react-native/img/tiny_logo.png",
+              content: STRINGS.CardTitle2[0]
+            }
+    ]
+  }
   ]
-
-//   state = {
-//     switchValue:true
-//   };
-
-//   _handleToogleSwitch = () => this.setState(state =>({
-//     switchValue : !state.switchValue
-//   }));
 
   render() {
     return (
         <View style={{flex:1, flexDirection:'column'}}>
-            <View style={{ flexDirection:'row', width:'100%', height: 100, backgroundColor:'white'}}>
-                <Text>dsdfsdf</Text>
-                {/* <Switch 
-                onValueChange = {this._handleToogleSwitch}
-                value = {this.state.switchValue}/> */}
+            <View style={{ flexDirection:'row', padding:5, justifyContent:'space-between', width:'100%', height: 30, backgroundColor:'#ededed'}}>
+                <Text style={{marginTop:2, marginLeft:5}}>dsdfsdf</Text>
+                <Switch
+                  style={{marginTop:0}}
+                  onValueChange = {this.toggleSwitch}
+                  value = {this.state.switchValue}/>
             </View>
             <ScrollView style={styles.actionContainer}>
                 <SectionGrid

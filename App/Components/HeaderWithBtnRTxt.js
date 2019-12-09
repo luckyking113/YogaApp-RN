@@ -25,7 +25,8 @@ export default class HeaderWithBtnRTxt extends React.Component {
                 textAlignVertical: "center"
                 }}>
                 <View>                    
-                    <TouchableOpacity onPress={() => navigation.navigate('HomeScreen', { name: 'HomeScreen' })}>
+                    {/* <TouchableOpacity onPress={() => navigation.navigate('HomeScreen', { name: 'HomeScreen' })}> */}
+                    <TouchableOpacity onPress={() => this.props.navigation.goBack(null)}>
                         <Icon name='left' size={20} color='white' />
                     </TouchableOpacity>
                 </View>

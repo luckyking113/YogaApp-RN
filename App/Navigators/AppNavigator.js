@@ -32,9 +32,11 @@ import AppointmentScreen from '../Containers/AppointmentScreen/AppointmentScreen
 import ActScreen from '../Containers/ActScreen/ActScreen';
 import SystemNotificationScreen from '../Containers/SystemNotificationScreen/SystemNotificationScreen';
 import NoClassDaysScreen from '../Containers/NoClassDaysScreen/NoClassDaysScreen';
+import GenerateCardScreen from '../Containers/GenerateCardScreen/GenerateCardScreen';
 
-
+//Tab3
 import BusinessScreen from '../Containers/BusinessScreen/BusinessScreen';
+import WishingWallScreen from '../Containers/WishingWallScreen/WishingWallScreen';
 import StudyScreen from '../Containers/StudyScreen/StudyScreen';
 import TeachingScreen from '../Containers/TeachingScreen/TeachingScreen';
 import ManagementScreen from '../Containers/ManagementScreen/ManagementScreen';
@@ -119,7 +121,7 @@ const TabNavigator = createBottomTabNavigator(
         MonthlySailScreen:{
           screen: MonthlySailScreen,
           navigationOptions: ({ navigation }) => ({
-            header: (<HeaderWithBtnRTxt title={STRINGS.CardSailAnylizing} navigation = {navigation} RText={STRINGS.Filter} />),        
+            header: (<HeaderWithBtnRTxt title={STRINGS.CardSailAnylizing} navigation = {navigation} RText={STRINGS.Filter} />),
           }),
         },
         AppointmentScreen:{
@@ -170,7 +172,18 @@ const TabNavigator = createBottomTabNavigator(
           screen: NoClassDaysScreen,
           navigationOptions: ({ navigation }) => ({
             title: STRINGS.Action,
-            header: (<HeaderWithBackBtn title={STRINGS.SystemNotification} navigation = {navigation} />),  
+            header: (<HeaderWithBackBtn title={STRINGS.NoClassDays} navigation = {navigation} />),  
+            // headerTitleStyle: { 
+            //   textAlign:"center", 
+            //   flex:1, 
+            // },       
+          }),
+        },
+        GenerateCardScreen:{
+          screen: GenerateCardScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: STRINGS.Action,
+            header: (<HeaderWithBackBtn title={STRINGS.GenerateCard} navigation = {navigation} />),  
             // headerTitleStyle: { 
             //   textAlign:"center", 
             //   flex:1, 
@@ -206,6 +219,13 @@ const TabNavigator = createBottomTabNavigator(
           navigationOptions: ({ navigation }) => ({
             title: STRINGS.Business,
             header: (<TabHeader title={STRINGS.Business}/>),             
+          })
+        },
+        WishingWall:{
+          screen: WishingWallScreen,
+          navigationOptions: ({ navigation }) => ({
+            title: STRINGS.Business,
+            header: (<HeaderWithBtnRTxt title={STRINGS.CardSailAnylizing} navigation = {navigation} RText={STRINGS.Filter} />),          
           })
         }
       },

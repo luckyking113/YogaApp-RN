@@ -37,6 +37,9 @@ export default class ActScreen extends React.Component {
     this.props.navigation.navigate('NoClassDaysScreen');
   }
 
+  goGenerateCardScreen = () => {
+    this.props.navigation.navigate('GenerateCardScreen');
+  }
   DATA = [
     {
       title: STRINGS.WorkBench, //'工作台',
@@ -83,20 +86,20 @@ export default class ActScreen extends React.Component {
           bgColor:'#F2C282', 
           onPressHandler: this.goNoClassDaysScreen,
         },
-        {
-          title: STRINGS.InvestIgatIonsDay,
-          icon: 'md-happy',
-          iconColor: 'white',
-          bgColor:'#A1F282',
-          onPressHandler: this.goInvestIgatIonsDayScreen,
-        },
-        {
-          title: STRINGS.NoClassNotification, 
-          icon: 'ios-megaphone',
-          iconColor: 'white',
-          bgColor:'#5EDAAF',
-          onPressHandler: this.goNoClassNotificationScreen,
-        },
+        // {
+        //   title: STRINGS.InvestIgatIonsDay,
+        //   icon: 'md-happy',
+        //   iconColor: 'white',
+        //   bgColor:'#A1F282',
+        //   onPressHandler: this.goInvestIgatIonsDayScreen,
+        // },
+        // {
+        //   title: STRINGS.NoClassNotification, 
+        //   icon: 'ios-megaphone',
+        //   iconColor: 'white',
+        //   bgColor:'#5EDAAF',
+        //   onPressHandler: this.goNoClassNotificationScreen,
+        // },
         {
           title: STRINGS.GenerateCard, 
           icon: 'ios-person',

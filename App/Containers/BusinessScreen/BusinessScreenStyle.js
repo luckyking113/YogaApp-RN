@@ -9,7 +9,7 @@ export default StyleSheet.create({
     ...ApplicationStyles.screen.container,
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center',    
   },
   sectionHeader: {
     backgroundColor: Colors.sectionHeader,
@@ -19,7 +19,7 @@ export default StyleSheet.create({
   item: {
     flexDirection: 'column',
     ...Metrics.smallVerticalPadding,
-    alignItems: 'center',
+    alignItems: 'center',    
   },
   title: {
     ...Metrics.tinyVerticalMargin,
