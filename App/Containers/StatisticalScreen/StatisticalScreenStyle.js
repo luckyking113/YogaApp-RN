@@ -6,7 +6,8 @@ export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    alignItems: 'flex-start',
+    padding:20,
   },
 })

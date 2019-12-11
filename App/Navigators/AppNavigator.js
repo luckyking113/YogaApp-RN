@@ -27,6 +27,8 @@ import HomeHeaderComponent from '../Components/HomeHeader/HomeHeaderComponent';
 import StatisticalScreen from '../Containers/StatisticalScreen/StatisticalScreen';
 import MonthlySailScreen from '../Containers/MonthlySailScreen/MonthlySailScreen';
 import AppointmentScreen from '../Containers/AppointmentScreen/AppointmentScreen';
+import HighClassScreen from '../Containers/HighClassScreen/HighClassScreen';
+import GeneralClassScreen from '../Containers/GeneralClassScreen/GeneralClassScreen';
 
 //Tab2
 import ActScreen from '../Containers/ActScreen/ActScreen';
@@ -73,13 +75,13 @@ const TabNavigator = createBottomTabNavigator(
             HomeScreen: {
               screen: HomeScreen,
               navigationOptions: ({ navigation }) => ({
-                header: (<HomeHeaderComponent />),            
+                header: (<HomeHeaderComponent />),       
               }),
             },
             RegisterLession: {
               screen: RegisterLession,
               navigationOptions: ({ navigation }) => ({
-                header: (<RegisterHeader title={STRINGS.RegisterDetail} navigation = {navigation} />),        
+                header: (<RegisterHeader title={STRINGS.RegisterDetail} navigation = {navigation} />),
               }),
             },
           }),
@@ -103,7 +105,7 @@ const TabNavigator = createBottomTabNavigator(
         MemberScreen:{
           screen: MemberScreen,
           navigationOptions: ({ navigation }) => ({
-            title: 'MemberScreen Screen', // Title to appear in status bar
+            header: (<HeaderWithBtnRTxt title={STRINGS.Member} navigation = {navigation} RText={STRINGS.Manage} />),
           }),
         },
         VisitorScreen:{
@@ -115,7 +117,7 @@ const TabNavigator = createBottomTabNavigator(
         StatisticalScreen:{
           screen: StatisticalScreen,
           navigationOptions: ({ navigation }) => ({
-            title: 'StatisticalScreen Screen', // Title to appear in status bar
+            header: (<RegisterHeader title={STRINGS.StatisticalSpecification} navigation = {navigation} />),
           }),
         },
         MonthlySailScreen:{
@@ -125,9 +127,71 @@ const TabNavigator = createBottomTabNavigator(
           }),
         },
         AppointmentScreen:{
-          screen: AppointmentScreen,
+          // screen: AppointmentScreen,
+          screen:createMaterialTopTabNavigator({
+            AppointmentScreen:{
+              screen:AppointmentScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>{STRINGS.AppointmentTab1}</Text>               
+                    </View>
+                  )
+                },
+              },
+            },
+            HighClassScreen:{
+              screen:HighClassScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>{STRINGS.AppointmentTab2}</Text>               
+                    </View>
+                  )                  
+                },
+              },
+            },
+            GeneralClassScreen:{
+              screen:GeneralClassScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>{STRINGS.AppointmentTab3}</Text>               
+                    </View>
+                  )                  
+                },
+              },
+            }
+          },
+          {
+            tabBarOptions: {  
+              activeTintColor: 'red',
+              inactiveTintColor:'red',
+              showIcon: true,  
+              showLabel:false,  
+              style: {  
+                  backgroundColor:'white'  
+              },
+              tabStyle: {
+              },   
+              iconStyle: {
+                width: 60,
+                height: 30,
+                padding:0       //Padding 0 here
+              },              
+            },
+          }),
           navigationOptions: ({ navigation }) => ({
-            title: 'AppointmentScreen Screen', // Title to appear in status bar
+            header: (<HeaderWithBtnRTxt title={STRINGS.AgentMission} navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
           }),
         },
 

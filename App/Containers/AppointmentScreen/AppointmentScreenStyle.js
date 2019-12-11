@@ -5,8 +5,13 @@ import ApplicationStyles from 'App/Theme/ApplicationStyles'
 export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
-    display: 'flex',
-    justifyContent: 'center',
+    display: 'flex',    
     alignItems: 'center',
   },
+  calendarContainer:{
+    width:'100%',
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor:'white',    
+  }
 })

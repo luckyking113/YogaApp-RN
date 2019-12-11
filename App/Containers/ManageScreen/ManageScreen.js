@@ -25,22 +25,6 @@ export default class ManageScreen extends React.Component {
   go2AgentMission = () => {
     this.props.navigation.navigate('AgentMission');
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  Cn 
   go2PersonalEducation = () => {
     this.props.navigation.navigate('PersonalEducation');
   }

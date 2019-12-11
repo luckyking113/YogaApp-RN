@@ -48,10 +48,10 @@ export default class HomeScreen extends React.Component {
   }
 
   goBookingScreen = () => {    
-    this.props.navigation.navigate('AgentMission');
+    this.props.navigation.navigate('AppointmentScreen');
   }
   goAssignedScreen = () => {
-    this.props.navigation.navigate('AssignedScreen');
+    this.props.navigation.navigate('AppointmentScreen');
   }
   goMemberScreen = () => {
     this.props.navigation.navigate('MemberScreen');

@@ -20,11 +20,8 @@ export default class MonthlySailScreen extends React.Component {
               <Text style={{color:'#f24900', fontSize:40}}>0.00</Text>
               <Text style={{color:'rgba(0,0,0,.4)', fontSize:14}}>总金额(元)</Text>
             </View>
-            
           </View>
         </View>
-        
-        
       </View>
     )
   }

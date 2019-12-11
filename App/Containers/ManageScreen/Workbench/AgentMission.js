@@ -1,23 +1,19 @@
-import React from 'react'
-
+import React from 'react';
 import { SafeAreaView, View, FlatList, Text, Image } from 'react-native';
 import CalendarStrip from 'react-native-slideable-calendar-strip';
-import Icon from 'react-native-vector-icons/AntDesign'
+import Icon from 'react-native-vector-icons/AntDesign';
 import SegmentedControlTab from "react-native-segmented-control-tab";
 
-import Colors from '../../../Theme/Colors'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import moment from 'moment'
-import { ScreenWidth } from '../../../Theme/Styles'
+import Colors from '../../../Theme/Colors';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import moment from 'moment';
+import { ScreenWidth } from '../../../Theme/Styles';
 
-import { StyleSheet } from 'react-native'
-import * as Progress from 'react-native-progress';
-import { StackedBarChart } from 'react-native-svg-charts'
+import { StyleSheet } from 'react-native';
+import { StackedBarChart } from 'react-native-svg-charts';
 import { STRINGS } from '../../../Config';
 
-
-
-function Item({ item: {id, title, starttime, endtime, stat, name, image, data, lcolor, onItemClickHandler } }) {
+function Item({ item: {id, title, starttime, endtime, state, name, image, data, lcolor, onItemClickHandler } }) {
   
   if(data == undefined) {
     return (
@@ -34,7 +30,7 @@ function Item({ item: {id, title, starttime, endtime, stat, name, image, data, l
 
           <View style={styles.datatableCellTime}>          
             <Text style={{width:110}}>{starttime}-{endtime}</Text>
-            <Text style={{backgroundColor:'#eeaa00', color:'white', padding:1}}> {stat} </Text>
+            <Text style={{backgroundColor:'#eeaa00', color:'white', padding:1}}> {state} </Text>
           </View>
           <View style={styles.datatableCellTitle}>          
             <Text style={{width:250, padding:1}}>{title}</Text>

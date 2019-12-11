@@ -5,7 +5,8 @@ import ApplicationStyles from 'App/Theme/ApplicationStyles'
 export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
-    display: 'flex',    
+    display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
   },
 })

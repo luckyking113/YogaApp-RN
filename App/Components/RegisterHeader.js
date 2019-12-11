@@ -13,7 +13,7 @@ export default class RegisterHeader extends React.Component {
     }
 
     render() {
-        const { navigate } = this.props.navigation;
+        // const { navigate } = this.props.navigation;
         return (
             <View
                 style={{
@@ -28,7 +28,7 @@ export default class RegisterHeader extends React.Component {
                 textAlignVertical: "center"
                 }}>
                 <View>
-                    <TouchableOpacity onPress={() => navigate('HomeScreen', { name: 'HomeScreen' })}>
+                    <TouchableOpacity onPress={() => this.props.navigation.goBack(null)}>
                         <Icon name='left' size={20} color='white' />
                     </TouchableOpacity>
                 </View>

@@ -27,8 +27,13 @@ export const STRINGS = {
   More:'更多',
   TeacherName:['小姜','高老师', '小路'],
 
-  AppointmentDetail1:'哈他瑜伽',
+  AppointmentDetail1:'哈他瑜伽',  
   RegisterDetail:'预约详情',
+
+  AppointmentTab1:'团课',
+  AppointmentTab2:'精品课',
+  AppointmentTab3:'私教课',
+  
 
   // Tab 2
   Action: '待办',
@@ -61,6 +66,7 @@ export const STRINGS = {
   Manage: '管理',
   WorkBench: '工作台',
   AgentMission: '代约团课',
+  AgentMissionHeaderRight:'排课',
   PersonalEducation: '代约私教',
   ScanCode: '扫码签到',
   YogaHeadline: '瑜伽头条',

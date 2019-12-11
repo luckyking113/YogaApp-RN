@@ -18,7 +18,7 @@ function AppointmentItem({ item: {teacherName,country, data, oclick, detail,stat
             <View style={{flexDirection:'row'}}>
               <Text>{oclick}</Text>
               <View style={{backgroundColor:'#F7C97D',marginLeft:15,alignItems:'center', justifyContent:'center',width:40}}>
-                <Text>{country}</Text>   
+                <Text>{country}</Text>
               </View>          
             </View>        
             <Text style={styles.title}>{detail}</Text>
