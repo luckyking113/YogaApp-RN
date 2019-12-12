@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "faker": "^4.1.0",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
@@ -28,6 +29,7 @@
     "react-native-paper": "^3.2.1",
     "react-native-progress": "^4.0.1",
     "react-native-qrcode-svg": "^5.3.2",
+    "react-native-search-filter": "^0.1.5",
     "react-native-segmented-control-tab": "^3.4.1",
     "react-native-slideable-calendar-strip": "^0.4.0",
     "react-native-snap-carousel": "^3.8.4",
