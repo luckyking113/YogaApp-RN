@@ -26,4 +26,5 @@ export default {
   subText: '#a0a0a0',
   lightGrey: '#d7d7d7',
   lightGreen: '#79ECB3',
+  lightBlue:'#ff8e8c',
 }

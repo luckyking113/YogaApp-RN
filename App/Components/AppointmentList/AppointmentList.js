@@ -36,7 +36,7 @@ function AppointmentItem({ item: {teacherName,country, data, oclick, detail,stat
         </View>
         <View style={styles.datatableCellSubtitle}>        
           <StackedBarChart
-              style={ { height: 5,  width: '100%' } }
+              style={ { height: 5,  width: '100%' }}
               keys={ [ 'a', 'b', 'c' ] }
               colors={ [ Colors.iconOrange, Colors.iconDGreen, Colors.lightGrey ] }
               data={ data }

@@ -16,6 +16,7 @@ import TabHeader from '../Components/TabHeaderComponent';
 import RegisterHeader from '../Components/RegisterHeader';
 import HeaderWithBackBtn from '../Components/HeaderWithBackBtn';
 import HeaderWithBtnRTxt from '../Components/HeaderWithBtnRTxt';
+import HeaderWithPlusBtn from '../Components/HeaderWithPlusBtn';
 
 //Home screen
 import HomeScreen from '../Containers/HomeScreen/HomeScreen';
@@ -29,6 +30,7 @@ import MonthlySailScreen from '../Containers/MonthlySailScreen/MonthlySailScreen
 import AppointmentScreen from '../Containers/AppointmentScreen/AppointmentScreen';
 import HighClassScreen from '../Containers/HighClassScreen/HighClassScreen';
 import GeneralClassScreen from '../Containers/GeneralClassScreen/GeneralClassScreen';
+import RegisterDetail from '../Containers/RegisterLession/RegisterDetail/RegisterDetail';
 
 //Tab2
 import ActScreen from '../Containers/ActScreen/ActScreen';
@@ -46,6 +48,16 @@ import OperateGuideScreen from '../Containers/OperateGuideScreen/OperateGuideScr
 import SuggestionScreen from '../Containers/SuggestionScreen/SuggestionScreen';
 import WarmWinterScreen from '../Containers/WarmWinterScreen/WarmWinterScreen';
 import RegisterLession from '../Containers/RegisterLession/RegisterLession';
+import ExperienceManagementTab from '../Containers/BusinessScreen/ExperienceManagementTab';
+import ExperienceManagementTab1 from '../Containers/BusinessScreen/ExperienceManagementTab1';
+import ExperienceManagementTab2 from '../Containers/BusinessScreen/ExperienceManagementTab2';
+import MemberShipCardListScreen from '../Containers/BusinessScreen/SubScreens/MemberShipCardListScreen';
+import OnlineCardSettingScreen from '../Containers/BusinessScreen/SubScreens/OnlineCardSettingScreen';
+import MyIncomeScreen from '../Containers/BusinessScreen/SubScreens/MyIncomeScreen';
+import IncomeCalculatorScreen from '../Containers/BusinessScreen/SubScreens/IncomeCalculatorScreen';
+import MessageManagementScreen from '../Containers/BusinessScreen/MessageManagementScreen';
+import OutMoneyScreen from '../Containers/BusinessScreen/OutMoneyScreen';
+import EventScreen from '../Containers/BusinessScreen/SubScreens/EventScreen';
 
 import ManageScreen from '../Containers/ManageScreen/ManageScreen';
 import Colors from '../Theme/Colors';
@@ -84,6 +96,12 @@ const TabNavigator = createBottomTabNavigator(
                 header: (<RegisterHeader title={STRINGS.RegisterDetail} navigation = {navigation} />),
               }),
             },
+            RegisterDetail: {
+              screen: RegisterDetail,
+              navigationOptions: ({ navigation }) => ({
+                header: (<HeaderWithPlusBtn title='会员详情' navigation = {navigation} />),
+              }),
+            },
           }),
           navigationOptions: ({ navigation }) => ({
             header: null,
@@ -111,7 +129,7 @@ const TabNavigator = createBottomTabNavigator(
         VisitorScreen:{
           screen: VisitorScreen,
           navigationOptions: ({ navigation }) => ({
-            title: 'VisitorScreen Screen', // Title to appear in status bar
+            header: (<HeaderWithBtnRTxt title={STRINGS.Member} navigation = {navigation} RText={STRINGS.Manage} />),
           }),
         },
         StatisticalScreen:{
@@ -286,10 +304,146 @@ const TabNavigator = createBottomTabNavigator(
           })
         },
         WishingWall:{
-          screen: WishingWallScreen,
+          // screen: WishingWallScreen,
+          screen: createMaterialTopTabNavigator({
+            WishingWall:{
+               screen: WishingWallScreen,
+               navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>进行中</Text>               
+                    </View>
+                  )
+                },
+              },
+            },
+            EndRope:{
+              screen: WishingWallScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>末开始</Text>               
+                    </View>
+                  )
+                },
+              },
+            },
+            Overdue:{
+              screen: WishingWallScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>已过期</Text>               
+                    </View>
+                  )
+                },
+              },
+            },
+            UnpublIshed:{
+              screen: WishingWallScreen,
+              navigationOptions: {                
+                tabBarIcon: ({ focused, tintColor }) => {
+                  tintColor = '#79ECB3'
+                  return (                    
+                    <View>
+                      {/* <Text style={{color:focused? '#878686':'79ECB3'}}>{STRINGS.Teaching}</Text>  */}
+                      <Text style={{color:focused? tintColor:'#787878'}}>未发布</Text>               
+                    </View>
+                  )
+                },
+              },
+            }
+          },
+          {
+            tabBarOptions: {  
+              activeTintColor: 'red',
+              inactiveTintColor:'red',
+              showIcon: true,  
+              showLabel:false,  
+              style: {  
+                  backgroundColor:'white'  
+              },
+              tabStyle: {
+              },   
+              iconStyle: {
+                width: 60,
+                height: 30,
+                padding:0       //Padding 0 here
+              },              
+            },
+          }),
           navigationOptions: ({ navigation }) => ({
             title: STRINGS.Business,
-            header: (<HeaderWithBtnRTxt title={STRINGS.CardSailAnylizing} navigation = {navigation} RText={STRINGS.Filter} />),          
+            header: (<HeaderWithBtnRTxt title='许愿墙活动列表' navigation = {navigation} RText='新增' />),          
+          })
+        },
+        ExperienceManagementTab:{
+          screen: ExperienceManagementTab,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='分销售卡' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
+          })
+        },
+        ExperienceManagementTab1:{
+          screen: ExperienceManagementTab1,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='裂变分销' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
+          })
+        },
+        ExperienceManagementTab2:{
+          screen: ExperienceManagementTab2,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='裂变分销' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
+          })
+        },
+        MessageManagementScreen:{
+          screen: MessageManagementScreen,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='短信管理' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
+          })
+        },
+        OutMoneyScreen:{
+          screen: OutMoneyScreen,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='提现说明' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
+          })
+        },                
+        MemberShipCardListScreen:{
+          screen: MemberShipCardListScreen,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='分销会员卡列表' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
+          })
+        },
+        OnlineCardSettingScreen:{
+          screen: OnlineCardSettingScreen,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='线上售卡设置' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
+          })
+        },
+        MyIncomeScreen:{
+          screen: MyIncomeScreen,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='我的分销收益' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
+          })
+        },
+        IncomeCalculatorScreen:{
+          screen: IncomeCalculatorScreen,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='分销收益结算' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
+          })
+        },
+        EventScreen:{
+          screen: EventScreen,
+          navigationOptions: ({ navigation }) => ({
+            header: (<RegisterHeader title='活动列表' navigation = {navigation} RText={STRINGS.AgentMissionHeaderRight} />),
           })
         }
       },

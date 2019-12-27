@@ -1,13 +1,13 @@
 import React from 'react'
 import { Text, View, Image } from 'react-native';
-import styles from './HighClassScreenStyles';
+import styles from '../../WishingWallScreen/WishingWallScreenStyles';
 
-export default class HighClassScreen extends React.Component {
+export default class EventScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         {/* You will probably want to insert your logo here */}
-        <Image source={require('../../Assets/Images/homeIcon.png')} style={{width:80, height:80, marginBottom:15}} />
+        <Image source={require('../../../Assets/Images/homeIcon.png')} style={{width:80, height:80, marginBottom:15}} />
         <Text>暂无进行中活动</Text>
       </View>
     )

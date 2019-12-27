@@ -6,53 +6,27 @@ import Font from 'App/Theme/Fonts';
 export default StyleSheet.create({
   container: {
     ...ApplicationStyles.screen.container,
-    display: 'flex',  
-    flex:1,    
-  },
-  RegisterTop:{
-    backgroundColor:Colors.lightGreen,
-    height:100,
-    justifyContent:'space-between',
-    flexDirection:'row',    
-    paddingHorizontal:10,
-    alignItems:'center'    
-  },
-  TopTxt:{
-    fontSize:Font.size.regular,
-    color:Colors.white,
+    display: 'flex',
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
   detailContainer:{
-    paddingHorizontal:10, 
-    marginTop: -30   
-  },
-  DetailTxt:{
-    fontSize:Font.size.input,
-    color:Colors.black,
-  },
-  detailCardHeader:{
-    paddingHorizontal:15,
-    backgroundColor:'white',
-    marginBottom:10, 
-    height:60, 
-    justifyContent:'center',    
-    borderRadius: 2,
     borderColor: '#ddd',
-    borderBottomWidth: 2,
+    borderBottomWidth: 1,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
     shadowRadius: 2,
-    elevation: 1,
+    elevation: 1,    
   },
-  detailCard:{
+  detailCard:{    
     paddingHorizontal:15,
-    backgroundColor:'white',
-    marginBottom:10, 
+    backgroundColor:'white',    
     // height:100, 
     justifyContent:'center',    
-    borderRadius: 2,
-    borderColor: '#ddd',
-    borderBottomWidth: 2,
+    borderRadius: 1,
+    borderColor: '#ededed',
+    borderBottomWidth: 1,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
@@ -68,8 +42,15 @@ export default StyleSheet.create({
     justifyContent:'space-between',     
   },
   cardImage:{
-    width:50,
-    height:50,    
+    width:80,
+    height:80,    
+    justifyContent:'center',
+    alignItems:'center',
+    alignSelf:'center'
+  },
+  cardImage1:{    
+    width:120,
+    height:80,    
     justifyContent:'center',
     alignItems:'center',
     alignSelf:'center'
@@ -87,10 +68,7 @@ export default StyleSheet.create({
     justifyContent:'center',
     alignItems:'center'
   },
-  topBtn:{
-    backgroundColor:Colors.lightGreen,
-    height:25,
-    width:80,
+  topBtn:{    
     justifyContent:'center',
     alignItems:'center',
     marginBottom:10

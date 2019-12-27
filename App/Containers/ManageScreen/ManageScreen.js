@@ -23,16 +23,16 @@ export default class ManageScreen extends React.Component {
 
   //'工作台' session handlersv
   go2AgentMission = () => {
-    this.props.navigation.navigate('AgentMission');
+    this.props.navigation.navigate('AppointmentScreen');
   }
   go2PersonalEducation = () => {
-    this.props.navigation.navigate('PersonalEducation');
+    this.props.navigation.navigate('AppointmentScreen');
   }
   go2ScanCode = () => {
     this.props.navigation.navigate('ScanCode');
   }
   go2YogaHeadline = () => {
-    this.props.navigation.navigate('YogaHeadline');
+    this.props.navigation.navigate('OutMoneyScreen');
   }
   go2Configuration = () => {
     this.props.navigation.navigate('Configuration');
@@ -40,6 +40,12 @@ export default class ManageScreen extends React.Component {
   go2ExperienceManagement = () => {
     this.props.navigation.navigate('ExperienceManagement');
   }
+  go2MemberSceen = () => {
+    this.props.navigation.navigate('MemberScreen');
+  }
+  go2VisitorScreen = () => {
+    this.props.navigation.navigate('VisitorScreen');
+  } 
 
   DATA = [
     {
@@ -90,11 +96,13 @@ export default class ManageScreen extends React.Component {
           title: STRINGS.Member, //'会员',
           icon: 'ios-bookmark',
           color: Colors.iconYellow,
+          onPressHandler: this.go2MemberSceen,
         },
         {
           title: STRINGS.Visitor, //'访客',
           icon: 'ios-contact',
           color: Colors.iconPink,
+          onPressHandler: this.go2VisitorScreen
         },
         {
           title: STRINGS.MemberCard, //'会员卡',
@@ -211,7 +219,7 @@ export default class ManageScreen extends React.Component {
       <ScrollView>   
         <View style={styles.container}>
           <SectionGrid
-            itemDimension={90}
+            itemDimension={70}
             sections={this.DATA}
             keyExtractor={(item, index) => item + index}
             renderItem={({ item }) => <Item item={item} />}

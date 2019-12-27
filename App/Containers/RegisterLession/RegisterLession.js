@@ -4,14 +4,14 @@ import styles from './RegisterLessionStyles';
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import { SectionGrid } from 'react-native-super-grid';
 import {STRINGS} from '../../Config';
-import Colors from 'App/Theme/Colors'
+import Colors from 'App/Theme/Colors';
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 
 function Item({ item: { title, bgColor, icon, color, onPressHandler } }) {
   return (
     <View style={styles.detailCard}>
-      <View style={styles.cardLeftContent}>
+      <TouchableOpacity style={styles.cardLeftContent} onPress={onPressHandler}>
         <View style={styles.cardImage}>
           <Image style={styles.image} source={require('../../Assets/Images/homeIcon.png')} />
         </View>
@@ -20,7 +20,7 @@ function Item({ item: { title, bgColor, icon, color, onPressHandler } }) {
           <Text style={styles.leftTxtFont}>老会员年卡</Text>
           <Text style={styles.leftTxtFont}>余额:289天</Text>
         </View>
-      </View>
+      </TouchableOpacity>
       <View style={styles.cardRightContent}>
         <TouchableOpacity style={styles.topBtn}>
           <Text style={styles.topBtnTxt}>签到</Text>
@@ -34,6 +34,9 @@ function Item({ item: { title, bgColor, icon, color, onPressHandler } }) {
 }
 
 export default class RegisterLession extends React.Component {
+  goRegisterDetail = () => {
+    this.props.navigation.navigate('RegisterDetail');
+  }
 
   DATA = [
     {      
@@ -48,7 +51,7 @@ export default class RegisterLession extends React.Component {
           teacherName: STRINGS.TeacherName[0],
           progressState:30,  
           data: [{a:2, b:3, c:8}],   
-          onPressHandler:this.goRegisterLessionScreen       
+          onPressHandler:this.goRegisterDetail
         },
         {
           oclick:'12:20-13:30',
@@ -60,7 +63,7 @@ export default class RegisterLession extends React.Component {
           teacherName: STRINGS.TeacherName[1],
           progressState:30,  
           data: [{a:0, b:8, c:8}],    
-          onPressHandler:this.goRegisterLessionScreen 
+          onPressHandler:this.goRegisterDetail
         },
         {
           oclick:'12:20-13:30',
@@ -72,7 +75,7 @@ export default class RegisterLession extends React.Component {
           teacherName: STRINGS.TeacherName[0],
           progressState:30,  
           data: [{a:2, b:3, c:8}],   
-          onPressHandler:this.goRegisterLessionScreen       
+          onPressHandler:this.goRegisterDetail
         },
         {
           oclick:'12:20-13:30',
@@ -84,7 +87,7 @@ export default class RegisterLession extends React.Component {
           teacherName: STRINGS.TeacherName[1],
           progressState:30,  
           data: [{a:0, b:8, c:8}],    
-          onPressHandler:this.goRegisterLessionScreen 
+          onPressHandler:this.goRegisterDetail
         },
         {
           oclick:'12:20-13:30',
@@ -96,7 +99,7 @@ export default class RegisterLession extends React.Component {
           teacherName: STRINGS.TeacherName[0],
           progressState:30,  
           data: [{a:2, b:3, c:8}],   
-          onPressHandler:this.goRegisterLessionScreen       
+          onPressHandler:this.goRegisterDetail
         },
         {
           oclick:'12:20-13:30',
@@ -108,11 +111,11 @@ export default class RegisterLession extends React.Component {
           teacherName: STRINGS.TeacherName[1],
           progressState:30,  
           data: [{a:0, b:8, c:8}],    
-          onPressHandler:this.goRegisterLessionScreen 
+          onPressHandler:this.goRegisterDetail
         },   
       ],
     },
-  ]
+  ]  
 
   render() {
     const { navigation } = this.props;

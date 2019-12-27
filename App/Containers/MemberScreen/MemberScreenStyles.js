@@ -24,7 +24,9 @@ export default StyleSheet.create({
     alignItems:'center',    
   },
   emailSubject: {
-    color: 'rgba(0,0,0,0.5)'
+    color: 'rgba(0,0,0,0.5)',
+    fontSize:12,
+    marginTop:7,
   },
   searchInput:{
     padding: 10,
